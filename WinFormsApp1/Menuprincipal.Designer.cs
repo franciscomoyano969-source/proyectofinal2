@@ -191,9 +191,9 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(560, 209);
+            pictureBox4.Location = new Point(557, 209);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(157, 147);
+            pictureBox4.Size = new Size(160, 147);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -202,52 +202,52 @@
             // 
             lblnombre.AutoSize = true;
             lblnombre.BackColor = Color.Transparent;
-            lblnombre.Font = new Font("Chocolate and Vanilla", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblnombre.Font = new Font("Segoe Print", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblnombre.Location = new Point(243, 40);
             lblnombre.Name = "lblnombre";
-            lblnombre.Size = new Size(95, 47);
+            lblnombre.Size = new Size(132, 61);
             lblnombre.TabIndex = 3;
             lblnombre.Text = "label1";
             // 
             // lbltextbien
             // 
             lbltextbien.BackColor = Color.Transparent;
-            lbltextbien.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbltextbien.Location = new Point(156, 104);
+            lbltextbien.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbltextbien.Location = new Point(117, 101);
             lbltextbien.Name = "lbltextbien";
-            lbltextbien.Size = new Size(527, 58);
+            lbltextbien.Size = new Size(600, 57);
             lbltextbien.TabIndex = 4;
             lbltextbien.Text = "Te damos la bienvenida a NutriBank, aqui encontraras informacion sobre que es un banco de alimentos y su labor en la sociedad:";
             // 
             // label2
             // 
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(98, 370);
+            label2.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(91, 359);
             label2.Name = "label2";
-            label2.Size = new Size(123, 44);
+            label2.Size = new Size(150, 47);
             label2.TabIndex = 5;
             label2.Text = "    Clasificacion y Cuidado Nutricional";
             // 
             // label3
             // 
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(332, 370);
+            label3.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(321, 359);
             label3.Name = "label3";
-            label3.Size = new Size(128, 44);
+            label3.Size = new Size(158, 55);
             label3.TabIndex = 6;
             label3.Text = "   Materia Prima y Rotacion de Personal";
             // 
             // label4
             // 
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(582, 370);
+            label4.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(568, 359);
             label4.Name = "label4";
-            label4.Size = new Size(115, 44);
+            label4.Size = new Size(140, 55);
             label4.TabIndex = 7;
-            label4.Text = " Guía, consejos y control de sanidad";
+            label4.Text = "  Guía, consejos y control de sanidad";
             // 
             // pictureBox5
             // 

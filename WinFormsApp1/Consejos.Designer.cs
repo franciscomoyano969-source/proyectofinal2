@@ -47,27 +47,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Chocolate and Vanilla", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(130, 20);
+            label1.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(93, 11);
             label1.Name = "label1";
-            label1.Size = new Size(332, 32);
+            label1.Size = new Size(425, 43);
             label1.TabIndex = 0;
             label1.Text = "¿Cómo participar correctamente?";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(303, 71);
+            label2.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(260, 57);
             label2.Name = "label2";
-            label2.Size = new Size(219, 26);
+            label2.Size = new Size(272, 33);
             label2.TabIndex = 1;
             label2.Text = "El \"Kit\" de Donación Ideal:";
             // 
             // label3
             // 
-            label3.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(260, 107);
+            label3.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(240, 90);
             label3.Name = "label3";
             label3.Size = new Size(307, 50);
             label3.TabIndex = 2;
@@ -76,38 +76,38 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(71, 187);
+            label4.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(49, 160);
             label4.Name = "label4";
-            label4.Size = new Size(178, 26);
+            label4.Size = new Size(227, 33);
             label4.TabIndex = 3;
             label4.Text = "Más que solo comida: ";
             // 
             // label5
             // 
-            label5.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(21, 213);
+            label5.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(23, 196);
             label5.Name = "label5";
-            label5.Size = new Size(307, 47);
+            label5.Size = new Size(307, 77);
             label5.TabIndex = 4;
             label5.Text = "También se necesitan productos de limpieza, pañales y artículos de aseo personal.";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(303, 293);
+            label6.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(260, 293);
             label6.Name = "label6";
-            label6.Size = new Size(215, 26);
+            label6.Size = new Size(280, 33);
             label6.TabIndex = 5;
             label6.Text = "El poder del Voluntariado: ";
             // 
             // label7
             // 
-            label7.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(260, 336);
+            label7.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(240, 336);
             label7.Name = "label7";
-            label7.Size = new Size(307, 45);
+            label7.Size = new Size(307, 72);
             label7.TabIndex = 6;
             label7.Text = "Donar 3 horas de tu tiempo para armar cajas es tan valioso como donar una bolsa de comida.";
             // 
@@ -126,7 +126,7 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(348, 174);
+            pictureBox2.Location = new Point(348, 157);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(147, 116);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;

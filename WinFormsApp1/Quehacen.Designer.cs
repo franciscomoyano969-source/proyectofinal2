@@ -47,67 +47,67 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Chocolate and Vanilla", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(155, 9);
+            label1.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(124, 9);
             label1.Name = "label1";
-            label1.Size = new Size(282, 32);
+            label1.Size = new Size(353, 43);
             label1.TabIndex = 0;
             label1.Text = "¿Qué hacen en el día a día?";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(62, 58);
+            label2.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(39, 52);
             label2.Name = "label2";
-            label2.Size = new Size(233, 26);
+            label2.Size = new Size(291, 33);
             label2.TabIndex = 1;
             label2.Text = "Almacenamiento y Logística:";
             // 
             // label3
             // 
-            label3.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(25, 84);
             label3.Name = "label3";
-            label3.Size = new Size(305, 68);
+            label3.Size = new Size(305, 78);
             label3.TabIndex = 2;
             label3.Text = "Gestionan bodegas con normas de higiene estrictas, usando montacargas y sistemas de inventario profesional.";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(300, 176);
+            label4.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(273, 169);
             label4.Name = "label4";
-            label4.Size = new Size(240, 26);
+            label4.Size = new Size(293, 33);
             label4.TabIndex = 3;
             label4.Text = "Clasificación por Voluntarios:";
             // 
             // label5
             // 
-            label5.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(273, 202);
+            label5.Font = new Font("Segoe Print", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(261, 202);
             label5.Name = "label5";
-            label5.Size = new Size(305, 47);
+            label5.Size = new Size(305, 79);
             label5.TabIndex = 4;
             label5.Text = "Miles de personas revisan fecha de caducidad y estado de los empaques para garantizar seguridad.";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(87, 293);
+            label6.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(71, 293);
             label6.Name = "label6";
-            label6.Size = new Size(169, 26);
+            label6.Size = new Size(211, 33);
             label6.TabIndex = 5;
             label6.Text = "Red de Distribución:";
             // 
             // label7
             // 
-            label7.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(25, 334);
             label7.Name = "label7";
-            label7.Size = new Size(305, 68);
+            label7.Size = new Size(305, 74);
             label7.TabIndex = 6;
             label7.Text = "No entregan a personas en la calle, sino a fundaciones, asilos y comedores que ya conocen a los beneficiarios.";
             // 
@@ -126,7 +126,7 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(62, 165);
+            pictureBox2.Location = new Point(60, 187);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(161, 94);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;

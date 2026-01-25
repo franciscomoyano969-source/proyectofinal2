@@ -47,67 +47,67 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Chocolate and Vanilla", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(203, 9);
+            label1.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(178, 9);
             label1.Name = "label1";
-            label1.Size = new Size(183, 32);
+            label1.Size = new Size(222, 43);
             label1.TabIndex = 0;
             label1.Text = "Resultados reales";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(86, 56);
+            label2.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(74, 52);
             label2.Name = "label2";
-            label2.Size = new Size(157, 26);
+            label2.Size = new Size(188, 33);
             label2.TabIndex = 1;
             label2.Text = "Nutrición Infantil:";
             // 
             // label3
             // 
-            label3.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 92);
+            label3.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 85);
             label3.Name = "label3";
-            label3.Size = new Size(318, 64);
+            label3.Size = new Size(318, 73);
             label3.TabIndex = 2;
             label3.Text = "El apoyo del banco permite que los niños crezcan sanos, evitando la anemia y mejorando su rendimiento escolar.";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(348, 179);
+            label4.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(327, 167);
             label4.Name = "label4";
-            label4.Size = new Size(151, 26);
+            label4.Size = new Size(191, 33);
             label4.TabIndex = 3;
             label4.Text = "Alivio Económico: ";
             // 
             // label5
             // 
-            label5.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(260, 217);
+            label5.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(260, 205);
             label5.Name = "label5";
-            label5.Size = new Size(318, 45);
+            label5.Size = new Size(318, 74);
             label5.TabIndex = 4;
             label5.Text = "Al recibir comida, las familias pueden usar su poco dinero en medicinas, arriendo o servicios básicos.";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Chocolate and Vanilla", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(46, 304);
+            label6.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(24, 306);
             label6.Name = "label6";
-            label6.Size = new Size(238, 26);
+            label6.Size = new Size(297, 33);
             label6.TabIndex = 5;
             label6.Text = "Fortalecimiento Comunitario:";
             // 
             // label7
             // 
-            label7.Font = new Font("Chocolate and Vanilla", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(12, 339);
             label7.Name = "label7";
-            label7.Size = new Size(318, 44);
+            label7.Size = new Size(318, 55);
             label7.TabIndex = 6;
             label7.Text = "Unir a empresas, gobierno y ciudadanos en una sola causa común.";
             // 
@@ -115,7 +115,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(365, 44);
+            pictureBox1.Location = new Point(365, 52);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(164, 112);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

@@ -61,10 +61,10 @@
             lblingnombre.AutoSize = true;
             lblingnombre.BackColor = Color.Transparent;
             lblingnombre.FlatStyle = FlatStyle.Flat;
-            lblingnombre.Font = new Font("Chocolate and Vanilla", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblingnombre.Location = new Point(394, 243);
+            lblingnombre.Font = new Font("Segoe Print", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblingnombre.Location = new Point(375, 243);
             lblingnombre.Name = "lblingnombre";
-            lblingnombre.Size = new Size(181, 29);
+            lblingnombre.Size = new Size(217, 37);
             lblingnombre.TabIndex = 2;
             lblingnombre.Text = "Ingrese su nombre:";
             // 
