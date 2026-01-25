@@ -2,7 +2,6 @@ using Microsoft.VisualBasic.Devices;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using static System.Windows.Forms.DataFormats;
-
 namespace WinFormsApp1
 {
     public partial class Form1 : Form

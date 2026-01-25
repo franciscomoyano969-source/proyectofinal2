@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
-
 namespace WinFormsApp1
 {
     public partial class info1 : Form
@@ -14,14 +13,12 @@ namespace WinFormsApp1
             InitializeComponent();
             RedondearFormulario(25);
             Redondearpanel(pangenmenu, 50);
-
             // Redondeo de botones
             Redondear_butom(button1, 40);
             Redondear_butom(button2, 40);
             Redondear_butom(button3, 40);
             Redondear_butom(button4, 40);
             Redondear_butom(button5, 40);
-
             // Colores de botones y paneles
             button1.BackColor = ColorTranslator.FromHtml("#98FF98");
             button2.BackColor = ColorTranslator.FromHtml("#98FF98");
@@ -46,7 +43,6 @@ namespace WinFormsApp1
         {
             AbrirFormEnPanel(new juego());
         }
-
         // Eventos de botones (Navegación + Carga de links)
         private void button1_Click(object sender, EventArgs e)
         {
@@ -68,7 +64,6 @@ namespace WinFormsApp1
         {
             AbrirFormEnPanel(new Consejos());
         }
-
         private void picregresar_Click(object sender, EventArgs e)
         {
             Form1 menuInicio = new Form1();

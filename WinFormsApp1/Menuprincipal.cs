@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Reflection.Emit;
 using System.Windows.Forms;
-
 namespace WinFormsApp1
 {
     public partial class Menuprincipal : Form
@@ -23,7 +22,6 @@ namespace WinFormsApp1
                 lblnombre.Text = "Bienvenido, Invitado";
             }
         }
-
         private void RedondearFormulario(int radio)
         {
             GraphicsPath path = new GraphicsPath();
@@ -41,7 +39,6 @@ namespace WinFormsApp1
             form.Show();
             this.Hide();
         }
-
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             Application.Exit();

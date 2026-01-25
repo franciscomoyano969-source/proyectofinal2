@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-
 namespace WinFormsApp1
 {
     public class juego : Form
@@ -11,37 +10,30 @@ namespace WinFormsApp1
         int filas = 15;
         int columnas = 15;
         int tamañoCelda = 27; // Reducido para que quepa mejor
-
         char[,] tablero;
         Label[,] labels;
         string[] palabras = { "ALIMENTOS", "DONACION", "ARROZ", "LECHE", "VOLUNTARIO", "SOLIDARIDAD", "BANCO", "AYUDA", "FRUTAS", "HARINA" };
-
         Color[] paletaColores = { Color.LightGreen, Color.LightSalmon, Color.LightSkyBlue, Color.Thistle, Color.Khaki, Color.LightCoral, Color.Aquamarine, Color.SandyBrown, Color.Plum, Color.YellowGreen };
         int indiceColor = 0;
-
         HashSet<string> encontradas = new HashSet<string>();
         List<Label> seleccionActual = new List<Label>();
         Point inicioSeleccion = new Point(-1, -1);
         bool estaArrastrando = false;
-
         Panel panelSopa;
         Panel panelLista;
         Dictionary<string, Label> etiquetasListaUI = new Dictionary<string, Label>();
         Random rnd = new Random();
-
         public juego()
         {
             ConfigurarInterfaz();
             IniciarJuego();
         }
-
         private void ConfigurarInterfaz()
         {
             // IMPORTANTE: Quitamos bordes y tamaño fijo para el panel
             this.FormBorderStyle = FormBorderStyle.None;
             this.BackColor = Color.White;
             this.DoubleBuffered = true;
-
             // Panel de la Sopa (Izquierda)
             panelSopa = new Panel
             {
@@ -50,7 +42,6 @@ namespace WinFormsApp1
                 BackColor = Color.FromArgb(160, Color.White),
                 BorderStyle = BorderStyle.None
             };
-
             // Panel de la Lista (Derecha)
             panelLista = new Panel
             {
@@ -60,17 +51,14 @@ namespace WinFormsApp1
                 BorderStyle = BorderStyle.FixedSingle,
                 AutoScroll = true
             };
-
             this.Controls.Add(panelSopa);
             this.Controls.Add(panelLista);
         }
-
         private void IniciarJuego()
         {
             tablero = new char[filas, columnas];
             labels = new Label[filas, columnas];
             panelSopa.Controls.Clear();
-
             for (int f = 0; f < filas; f++)
             {
                 for (int c = 0; c < columnas; c++)
@@ -84,11 +72,9 @@ namespace WinFormsApp1
                         BorderStyle = BorderStyle.FixedSingle,
                         Tag = new Point(f, c)
                     };
-
                     lbl.MouseDown += Lbl_MouseDown;
                     lbl.MouseEnter += Lbl_MouseEnter;
                     lbl.MouseUp += Lbl_MouseUp;
-
                     labels[f, c] = lbl;
                     panelSopa.Controls.Add(lbl);
                 }
@@ -97,7 +83,6 @@ namespace WinFormsApp1
             RellenarConLetrasAzar();
             DibujarListaPalabras();
         }
-
         // --- LÓGICA DE SELECCIÓN ---
         private void Lbl_MouseDown(object sender, MouseEventArgs e)
         {
@@ -107,17 +92,14 @@ namespace WinFormsApp1
             ActualizarSeleccion(inicioSeleccion);
             ((Label)sender).Capture = false;
         }
-
         private void Lbl_MouseEnter(object sender, EventArgs e)
         {
             if (estaArrastrando) ActualizarSeleccion((Point)((Label)sender).Tag);
         }
-
         private void Lbl_MouseUp(object sender, MouseEventArgs e)
         {
             if (!estaArrastrando) return;
             estaArrastrando = false;
-
             string formada = string.Concat(seleccionActual.Select(l => l.Text));
             string invertida = new string(formada.Reverse().ToArray());
 
@@ -128,20 +110,17 @@ namespace WinFormsApp1
             }
             else LimpiarSeleccionVisual();
         }
-
         private void ActualizarSeleccion(Point fin)
         {
             LimpiarSeleccionVisual();
             seleccionActual.Clear();
             int df = fin.X - inicioSeleccion.X;
             int dc = fin.Y - inicioSeleccion.Y;
-
             if (df == 0 || dc == 0 || Math.Abs(df) == Math.Abs(dc))
             {
                 int pasoF = (df == 0) ? 0 : df / Math.Abs(df);
                 int pasoC = (dc == 0) ? 0 : dc / Math.Abs(dc);
                 int f = inicioSeleccion.X, c = inicioSeleccion.Y;
-
                 while (true)
                 {
                     Label lbl = labels[f, c];
@@ -154,7 +133,6 @@ namespace WinFormsApp1
                 }
             }
         }
-
         private void MarcarComoEncontrada(string p)
         {
             Color col = paletaColores[indiceColor % paletaColores.Length];
@@ -171,13 +149,11 @@ namespace WinFormsApp1
             if (encontradas.Count == palabras.Length)
                 MessageBox.Show("¡Felicidades! Completaste la sopa de donaciones.");
         }
-
         private void LimpiarSeleccionVisual()
         {
             foreach (Label lbl in labels)
                 if (lbl.BackColor == Color.SkyBlue) lbl.BackColor = Color.Transparent;
         }
-
         private void ColocarPalabras()
         {
             int[,] dirs = { { 0, 1 }, { 1, 0 }, { 1, 1 }, { -1, 1 } };
@@ -201,7 +177,6 @@ namespace WinFormsApp1
                 }
             }
         }
-
         private bool ValidarEspacio(string p, int f, int c, int df, int dc)
         {
             for (int i = 0; i < p.Length; i++)
@@ -212,14 +187,12 @@ namespace WinFormsApp1
             }
             return true;
         }
-
         private void RellenarConLetrasAzar()
         {
             for (int f = 0; f < filas; f++)
                 for (int c = 0; c < columnas; c++)
                     if (tablero[f, c] == '\0') labels[f, c].Text = ((char)('A' + rnd.Next(26))).ToString();
         }
-
         private void DibujarListaPalabras()
         {
             panelLista.Controls.Clear();
