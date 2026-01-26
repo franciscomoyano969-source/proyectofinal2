@@ -39,6 +39,7 @@
             button5 = new Button();
             pictureBox3 = new PictureBox();
             paninfo = new Panel();
+            linkLabel5 = new LinkLabel();
             picsalref = new PictureBox();
             label6 = new Label();
             linkLabel4 = new LinkLabel();
@@ -50,7 +51,6 @@
             linkLabel1 = new LinkLabel();
             label2 = new Label();
             label1 = new Label();
-            linkLabel5 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)picregresar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picjuego).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -96,7 +96,7 @@
             button1.BackColor = Color.Transparent;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(12, 84);
@@ -186,7 +186,7 @@
             // paninfo
             // 
             paninfo.AutoScroll = true;
-            paninfo.BackColor = Color.LightPink;
+            paninfo.BackColor = Color.White;
             paninfo.Controls.Add(linkLabel5);
             paninfo.Controls.Add(picsalref);
             paninfo.Controls.Add(label6);
@@ -204,6 +204,17 @@
             paninfo.Size = new Size(340, 281);
             paninfo.TabIndex = 17;
             paninfo.Visible = false;
+            // 
+            // linkLabel5
+            // 
+            linkLabel5.AutoSize = true;
+            linkLabel5.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel5.Location = new Point(3, 239);
+            linkLabel5.Name = "linkLabel5";
+            linkLabel5.Size = new Size(261, 19);
+            linkLabel5.TabIndex = 14;
+            linkLabel5.TabStop = true;
+            linkLabel5.Text = "https://www.trussell.org.uk/help-and-advice";
             // 
             // picsalref
             // 
@@ -318,17 +329,6 @@
             label1.Size = new Size(102, 26);
             label1.TabIndex = 1;
             label1.Text = "Referencias:";
-            // 
-            // linkLabel5
-            // 
-            linkLabel5.AutoSize = true;
-            linkLabel5.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel5.Location = new Point(3, 239);
-            linkLabel5.Name = "linkLabel5";
-            linkLabel5.Size = new Size(261, 19);
-            linkLabel5.TabIndex = 14;
-            linkLabel5.TabStop = true;
-            linkLabel5.Text = "https://www.trussell.org.uk/help-and-advice";
             // 
             // info1
             // 

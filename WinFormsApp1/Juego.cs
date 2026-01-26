@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+
 namespace WinFormsApp1
 {
     public class juego : Form
     {
         int filas = 15;
         int columnas = 15;
-        int tamañoCelda = 27; // Reducido para que quepa mejor
+        int tamañoCelda = 27;
         char[,] tablero;
         Label[,] labels;
         string[] palabras = { "ALIMENTOS", "DONACION", "ARROZ", "LECHE", "VOLUNTARIO", "SOLIDARIDAD", "BANCO", "AYUDA", "FRUTAS", "HARINA" };
@@ -23,18 +24,19 @@ namespace WinFormsApp1
         Panel panelLista;
         Dictionary<string, Label> etiquetasListaUI = new Dictionary<string, Label>();
         Random rnd = new Random();
+
         public juego()
         {
             ConfigurarInterfaz();
             IniciarJuego();
         }
+
         private void ConfigurarInterfaz()
         {
-            // IMPORTANTE: Quitamos bordes y tamaño fijo para el panel
             this.FormBorderStyle = FormBorderStyle.None;
             this.BackColor = Color.White;
             this.DoubleBuffered = true;
-            // Panel de la Sopa (Izquierda)
+
             panelSopa = new Panel
             {
                 Location = new Point(10, 10),
@@ -42,7 +44,11 @@ namespace WinFormsApp1
                 BackColor = Color.FromArgb(160, Color.White),
                 BorderStyle = BorderStyle.None
             };
-            // Panel de la Lista (Derecha)
+
+            // --- FUNCIÓN DE ARRASTRE (PARTE 1) ---
+            // Agregamos el evento de movimiento al panel para que rastree el mouse
+            panelSopa.MouseMove += PanelSopa_MouseMove;
+
             panelLista = new Panel
             {
                 Location = new Point(panelSopa.Right + 10, 10),
@@ -54,6 +60,7 @@ namespace WinFormsApp1
             this.Controls.Add(panelSopa);
             this.Controls.Add(panelLista);
         }
+
         private void IniciarJuego()
         {
             tablero = new char[filas, columnas];
@@ -83,19 +90,38 @@ namespace WinFormsApp1
             RellenarConLetrasAzar();
             DibujarListaPalabras();
         }
-        // --- LÓGICA DE SELECCIÓN ---
+
+        // --- FUNCIÓN DE ARRASTRE (PARTE 2) ---
+        private void PanelSopa_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (estaArrastrando)
+            {
+                // Detectamos qué Label está en la posición del mouse dentro del panel
+                Control hijo = panelSopa.GetChildAtPoint(e.Location);
+                if (hijo is Label lbl && lbl.Tag is Point puntoActual)
+                {
+                    ActualizarSeleccion(puntoActual);
+                }
+            }
+        }
+
         private void Lbl_MouseDown(object sender, MouseEventArgs e)
         {
             estaArrastrando = true;
             inicioSeleccion = (Point)((Label)sender).Tag;
             LimpiarSeleccionVisual();
             ActualizarSeleccion(inicioSeleccion);
+
+            // --- FUNCIÓN DE ARRASTRE (PARTE 3) ---
+            // Liberamos la captura del mouse para que el panel pueda detectar el movimiento
             ((Label)sender).Capture = false;
         }
+
         private void Lbl_MouseEnter(object sender, EventArgs e)
         {
             if (estaArrastrando) ActualizarSeleccion((Point)((Label)sender).Tag);
         }
+
         private void Lbl_MouseUp(object sender, MouseEventArgs e)
         {
             if (!estaArrastrando) return;
@@ -110,6 +136,7 @@ namespace WinFormsApp1
             }
             else LimpiarSeleccionVisual();
         }
+
         private void ActualizarSeleccion(Point fin)
         {
             LimpiarSeleccionVisual();
@@ -125,7 +152,9 @@ namespace WinFormsApp1
                 {
                     Label lbl = labels[f, c];
                     seleccionActual.Add(lbl);
-                    if (lbl.BackColor == Color.Transparent || lbl.BackColor == Color.White)
+
+                    // Solo pintamos de azul si el fondo no es ya de una palabra encontrada
+                    if (lbl.BorderStyle != BorderStyle.None)
                         lbl.BackColor = Color.SkyBlue;
 
                     if (f == fin.X && c == fin.Y) break;
@@ -133,6 +162,7 @@ namespace WinFormsApp1
                 }
             }
         }
+
         private void MarcarComoEncontrada(string p)
         {
             Color col = paletaColores[indiceColor % paletaColores.Length];
@@ -140,7 +170,7 @@ namespace WinFormsApp1
             foreach (var lbl in seleccionActual)
             {
                 lbl.BackColor = col;
-                lbl.BorderStyle = BorderStyle.None;
+                lbl.BorderStyle = BorderStyle.None; // Usamos esto para proteger el color
             }
             encontradas.Add(p);
             etiquetasListaUI[p].BackColor = col;
@@ -149,11 +179,13 @@ namespace WinFormsApp1
             if (encontradas.Count == palabras.Length)
                 MessageBox.Show("¡Felicidades! Completaste la sopa de donaciones.");
         }
+
         private void LimpiarSeleccionVisual()
         {
             foreach (Label lbl in labels)
                 if (lbl.BackColor == Color.SkyBlue) lbl.BackColor = Color.Transparent;
         }
+
         private void ColocarPalabras()
         {
             int[,] dirs = { { 0, 1 }, { 1, 0 }, { 1, 1 }, { -1, 1 } };
@@ -177,6 +209,7 @@ namespace WinFormsApp1
                 }
             }
         }
+
         private bool ValidarEspacio(string p, int f, int c, int df, int dc)
         {
             for (int i = 0; i < p.Length; i++)
@@ -187,12 +220,14 @@ namespace WinFormsApp1
             }
             return true;
         }
+
         private void RellenarConLetrasAzar()
         {
             for (int f = 0; f < filas; f++)
                 for (int c = 0; c < columnas; c++)
                     if (tablero[f, c] == '\0') labels[f, c].Text = ((char)('A' + rnd.Next(26))).ToString();
         }
+
         private void DibujarListaPalabras()
         {
             panelLista.Controls.Clear();

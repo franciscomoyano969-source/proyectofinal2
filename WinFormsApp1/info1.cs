@@ -13,6 +13,7 @@ namespace WinFormsApp1
             InitializeComponent();
             RedondearFormulario(25);
             Redondearpanel(pangenmenu, 50);
+            Redondearpanel(paninfo, 30);
             // Redondeo de botones
             Redondear_butom(button1, 40);
             Redondear_butom(button2, 40);
