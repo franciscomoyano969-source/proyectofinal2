@@ -1,0 +1,73 @@
+using Clasificación_de_alimentos;
+using Microsoft.VisualBasic.Devices;
+using System.Drawing.Drawing2D;
+using System.IO;
+
+namespace Cuidado_nutricional
+{
+    public partial class Cuidado1 : Form
+    {
+        private void RedondearFormulario(int radio)
+        {
+            // Crea una nueva ruta de gráficos para definir la forma
+            GraphicsPath path = new GraphicsPath();
+            int d = radio * 2;
+
+            // Añade los arcos para las cuatro esquinas
+            path.AddArc(0, 0, d, d, 180, 90);
+            path.AddArc(this.Width - d, 0, d, d, 270, 90);
+            path.AddArc(this.Width - d, this.Height - d, d, d, 0, 90);
+            path.AddArc(0, this.Height - d, d, d, 90, 90);
+
+            // Cierra la figura y aplica la nueva región al formulario
+            path.CloseFigure();
+            this.Region = new Region(path);
+        }
+        public Cuidado1()
+        {
+            InitializeComponent();
+            RedondearFormulario(25);
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            referenciaa.Visible = false;
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Cuidado2 formNuevo = new Cuidado2();
+            formNuevo.Show();
+            this.Hide();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Cuidado3 formNuevo = new Cuidado3();
+            formNuevo.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Cuidado4 formNuevo = new Cuidado4();
+            formNuevo.Show();
+            this.Hide();
+        }
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            referenciaa.Visible = true;
+            referenciaa.BringToFront();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            referenciaa.Visible = false;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Clas1 formClas1 = new Clas1();
+            formClas1.Show();
+            this.Hide();
+        }
+    }
+}

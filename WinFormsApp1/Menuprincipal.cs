@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Clasificación_de_alimentos;
+using PROYECTO;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Reflection.Emit;
@@ -42,6 +44,20 @@ namespace WinFormsApp1
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            FormN1 formN1 = new FormN1();
+            formN1.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Clas1 formClas1 = new Clas1();
+            formClas1.Show();
+            this.Hide();
         }
     }
 }
