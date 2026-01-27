@@ -64,7 +64,7 @@
             CLa.AutoSize = true;
             CLa.BackColor = Color.Transparent;
             CLa.Font = new Font("Segoe Print", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CLa.ForeColor = Color.FromArgb(64, 64, 0);
+            CLa.ForeColor = Color.Black;
             CLa.Location = new Point(199, 61);
             CLa.Name = "CLa";
             CLa.Size = new Size(436, 57);
@@ -77,6 +77,7 @@
             button1.BackColor = Color.Transparent;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(47, 172);
             button1.Name = "button1";
@@ -90,6 +91,7 @@
             button2.BackColor = Color.Transparent;
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(297, 172);
             button2.Name = "button2";
@@ -103,6 +105,7 @@
             button3.BackColor = Color.Transparent;
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Location = new Point(555, 172);
             button3.Name = "button3";
@@ -114,7 +117,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Ivory;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(86, 343);
             label1.Name = "label1";
@@ -125,7 +128,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.Ivory;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(356, 342);
             label2.Name = "label2";
@@ -136,7 +139,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.Ivory;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(622, 338);
             label3.Name = "label3";
@@ -185,12 +188,13 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox4.Cursor = Cursors.Hand;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(47, 388);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(57, 50);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 13;
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
@@ -248,7 +252,7 @@
             referenciaa.Controls.Add(label7);
             referenciaa.Controls.Add(label5);
             referenciaa.Controls.Add(label4);
-            referenciaa.Location = new Point(86, 144);
+            referenciaa.Location = new Point(86, 139);
             referenciaa.Name = "referenciaa";
             referenciaa.Size = new Size(398, 266);
             referenciaa.TabIndex = 14;

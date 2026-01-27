@@ -67,7 +67,34 @@ namespace Cuidado_nutricional
         {
             InitializeComponent();
             CargarOracion();
+            //redondear el formulario
             RedondearFormulario(25);
+            //redondear paneles
+            Redondearpanel(panel1, 30);
+            //redondear botones
+            Redondear_butom(btnVerificar, 40);
+            Redondear_butom(btnSiguiente, 40);
+            //colores de botones
+        }
+        static void Redondear_butom(Button boton, int radius)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, radius, radius, 180, 90);
+            gp.AddArc(boton.Width - radius, 0, radius, radius, 270, 90);
+            gp.AddArc(boton.Width - radius, boton.Height - radius, radius, radius, 0, 90);
+            gp.AddArc(0, boton.Height - radius, radius, radius, 90, 90);
+            gp.CloseFigure();
+            boton.Region = new Region(gp);
+        }
+        static void Redondearpanel(Panel p, int r)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, r, r, 180, 90);
+            gp.AddArc(p.Width - r, 0, r, r, 270, 90);
+            gp.AddArc(p.Width - r, p.Height - r, r, r, 0, 90);
+            gp.AddArc(0, p.Height - r, r, r, 90, 90);
+            gp.CloseFigure();
+            p.Region = new Region(gp);
         }
         private void Form5_Load(object sender, EventArgs e)
         {

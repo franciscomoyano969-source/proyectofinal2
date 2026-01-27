@@ -31,6 +31,36 @@ namespace Clasificación_de_alimentos
         {
             InitializeComponent();
             RedondearFormulario(25);
+            Redondearpanel(panelPrincipal, 30);
+            Redondearpanel(panelaFrutas, 30);
+            Redondearpanel(panelVerduras, 30);
+            Redondearpanel(panelCarnes, 30);
+            Redondear_butom(button1, 40);
+            Redondear_butom(button2, 40);
+            Redondear_butom(button3, 40);
+            button1.BackColor = ColorTranslator.FromHtml("#98FF98");
+            button2.BackColor = ColorTranslator.FromHtml("#98FF98");
+            button3.BackColor = ColorTranslator.FromHtml("#98FF98");
+        }
+        static void Redondearpanel(Panel p, int r)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, r, r, 180, 90);
+            gp.AddArc(p.Width - r, 0, r, r, 270, 90);
+            gp.AddArc(p.Width - r, p.Height - r, r, r, 0, 90);
+            gp.AddArc(0, p.Height - r, r, r, 90, 90);
+            gp.CloseFigure();
+            p.Region = new Region(gp);
+        }
+        static void Redondear_butom(Button boton, int radius)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, radius, radius, 180, 90);
+            gp.AddArc(boton.Width - radius, 0, radius, radius, 270, 90);
+            gp.AddArc(boton.Width - radius, boton.Height - radius, radius, radius, 0, 90);
+            gp.AddArc(0, boton.Height - radius, radius, radius, 90, 90);
+            gp.CloseFigure();
+            boton.Region = new Region(gp);
         }
         private void OcultarPaneles()
         {

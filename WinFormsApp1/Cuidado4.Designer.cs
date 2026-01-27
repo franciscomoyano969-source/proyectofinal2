@@ -62,17 +62,17 @@
             // lblOracion
             // 
             lblOracion.BackColor = Color.White;
-            lblOracion.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblOracion.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblOracion.Location = new Point(8, 149);
             lblOracion.Name = "lblOracion";
             lblOracion.Size = new Size(586, 79);
             lblOracion.TabIndex = 0;
-            lblOracion.Text = "Un banco de alimentos comunitario ayuda a reducir el ________ alimentario.";
+            lblOracion.Text = "Un banco de alimentos comunitario ayuda a reducir el   ________ alimentario.";
             // 
             // txtRespuesta
             // 
             txtRespuesta.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRespuesta.Location = new Point(495, 146);
+            txtRespuesta.Location = new Point(464, 149);
             txtRespuesta.Name = "txtRespuesta";
             txtRespuesta.Size = new Size(72, 22);
             txtRespuesta.TabIndex = 1;
@@ -114,120 +114,120 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9.75F);
-            label14.Location = new Point(20, 325);
+            label14.Font = new Font("Segoe Print", 9.75F);
+            label14.Location = new Point(17, 285);
             label14.Name = "label14";
-            label14.Size = new Size(48, 17);
+            label14.Size = new Size(53, 23);
             label14.TabIndex = 11;
             label14.Text = "estado";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9.75F);
-            label13.Location = new Point(20, 297);
+            label13.Font = new Font("Segoe Print", 9.75F);
+            label13.Location = new Point(17, 264);
             label13.Name = "label13";
-            label13.Size = new Size(92, 17);
+            label13.Size = new Size(108, 23);
             label13.TabIndex = 10;
             label13.Text = "contaminación";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9.75F);
-            label12.Location = new Point(20, 273);
+            label12.Font = new Font("Segoe Print", 9.75F);
+            label12.Location = new Point(16, 241);
             label12.Name = "label12";
-            label12.Size = new Size(90, 17);
+            label12.Size = new Size(106, 23);
             label12.TabIndex = 9;
             label12.Text = "vulnerabilidad";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9.75F);
-            label11.Location = new Point(20, 245);
+            label11.Font = new Font("Segoe Print", 9.75F);
+            label11.Location = new Point(16, 218);
             label11.Name = "label11";
-            label11.Size = new Size(83, 17);
+            label11.Size = new Size(96, 23);
             label11.TabIndex = 8;
             label11.Text = "refrigeración";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9.75F);
-            label10.Location = new Point(20, 218);
+            label10.Font = new Font("Segoe Print", 9.75F);
+            label10.Location = new Point(16, 195);
             label10.Name = "label10";
-            label10.Size = new Size(63, 17);
+            label10.Size = new Size(71, 23);
             label10.TabIndex = 7;
             label10.Text = "categoría";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9.75F);
-            label9.Location = new Point(17, 191);
+            label9.Font = new Font("Segoe Print", 9.75F);
+            label9.Location = new Point(17, 172);
             label9.Name = "label9";
-            label9.Size = new Size(65, 17);
+            label9.Size = new Size(77, 23);
             label9.TabIndex = 6;
             label9.Text = "distribuye";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F);
-            label8.Location = new Point(17, 162);
+            label8.Font = new Font("Segoe Print", 9.75F);
+            label8.Location = new Point(16, 149);
             label8.Name = "label8";
-            label8.Size = new Size(52, 17);
+            label8.Size = new Size(62, 23);
             label8.TabIndex = 5;
             label8.Text = "familias";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F);
-            label7.Location = new Point(17, 136);
+            label7.Font = new Font("Segoe Print", 9.75F);
+            label7.Location = new Point(16, 128);
             label7.Name = "label7";
-            label7.Size = new Size(77, 17);
+            label7.Size = new Size(85, 23);
             label7.TabIndex = 4;
             label7.Text = "desperdicio";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F);
-            label6.Location = new Point(17, 109);
+            label6.Font = new Font("Segoe Print", 9.75F);
+            label6.Location = new Point(16, 105);
             label6.Name = "label6";
-            label6.Size = new Size(67, 17);
+            label6.Size = new Size(75, 23);
             label6.TabIndex = 3;
             label6.Text = "seguridad";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9.75F);
+            label5.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(17, 82);
             label5.Name = "label5";
-            label5.Size = new Size(39, 17);
+            label5.Size = new Size(45, 23);
             label5.TabIndex = 2;
             label5.Text = "salud";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Red;
             label4.Location = new Point(8, 52);
             label4.Name = "label4";
-            label4.Size = new Size(41, 15);
+            label4.Size = new Size(51, 23);
             label4.TabIndex = 1;
             label4.Text = "Pistas:";
             // 
             // label3
             // 
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(8, 10);
             label3.Name = "label3";
-            label3.Size = new Size(151, 34);
+            label3.Size = new Size(151, 42);
             label3.TabIndex = 0;
             label3.Text = "Complete las oraciones con la palabra faltante";
             // 
@@ -235,8 +235,9 @@
             // 
             btnSiguiente.BackColor = Color.LightSkyBlue;
             btnSiguiente.Cursor = Cursors.Hand;
+            btnSiguiente.FlatAppearance.BorderSize = 0;
             btnSiguiente.FlatStyle = FlatStyle.Flat;
-            btnSiguiente.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSiguiente.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSiguiente.Location = new Point(385, 267);
             btnSiguiente.Name = "btnSiguiente";
             btnSiguiente.Size = new Size(110, 45);
@@ -249,8 +250,9 @@
             // 
             btnVerificar.BackColor = Color.DarkSeaGreen;
             btnVerificar.Cursor = Cursors.Hand;
+            btnVerificar.FlatAppearance.BorderSize = 0;
             btnVerificar.FlatStyle = FlatStyle.Flat;
-            btnVerificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVerificar.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVerificar.Location = new Point(265, 264);
             btnVerificar.Name = "btnVerificar";
             btnVerificar.Size = new Size(103, 48);
@@ -273,10 +275,10 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.FlatStyle = FlatStyle.Flat;
-            label2.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(170, 52);
+            label2.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(180, 40);
             label2.Name = "label2";
-            label2.Size = new Size(212, 22);
+            label2.Size = new Size(229, 33);
             label2.TabIndex = 15;
             label2.Text = "JUEGO INTERACTIVO";
             // 
@@ -284,10 +286,10 @@
             // 
             lblPuntaje.AutoSize = true;
             lblPuntaje.BackColor = Color.Transparent;
-            lblPuntaje.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPuntaje.Font = new Font("Segoe Print", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPuntaje.Location = new Point(446, 3);
             lblPuntaje.Name = "lblPuntaje";
-            lblPuntaje.Size = new Size(118, 30);
+            lblPuntaje.Size = new Size(136, 37);
             lblPuntaje.TabIndex = 3;
             lblPuntaje.Text = "Puntaje: 0 ";
             lblPuntaje.Click += lblPuntaje_Click;
@@ -296,10 +298,10 @@
             // 
             lblResultado.AutoSize = true;
             lblResultado.BackColor = Color.White;
-            lblResultado.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResultado.Font = new Font("Segoe Print", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblResultado.Location = new Point(19, 285);
             lblResultado.Name = "lblResultado";
-            lblResultado.Size = new Size(111, 30);
+            lblResultado.Size = new Size(121, 37);
             lblResultado.TabIndex = 2;
             lblResultado.Text = "Respuesta";
             // 
@@ -345,6 +347,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Cuidado4";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form5";
             Load += Form5_Load;
             panel2.ResumeLayout(false);

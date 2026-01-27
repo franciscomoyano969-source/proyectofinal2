@@ -96,7 +96,8 @@
             // button1
             // 
             button1.BackColor = Color.Ivory;
-            button1.FlatStyle = FlatStyle.Popup;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe Print", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
@@ -111,7 +112,8 @@
             // button2
             // 
             button2.BackColor = Color.Ivory;
-            button2.FlatStyle = FlatStyle.Popup;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe Print", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
@@ -126,7 +128,8 @@
             // button3
             // 
             button3.BackColor = Color.Ivory;
-            button3.FlatStyle = FlatStyle.Popup;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe Print", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;

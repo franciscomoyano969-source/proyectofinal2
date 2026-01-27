@@ -32,7 +32,6 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            panelPrincipal = new Panel();
             label6 = new Label();
             label5 = new Label();
             pictureBox4 = new PictureBox();
@@ -42,6 +41,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
             panelcereal = new Panel();
             label13 = new Label();
             label12 = new Label();
@@ -74,12 +74,20 @@
             pictureBox11 = new PictureBox();
             label23 = new Label();
             label21 = new Label();
-            paneldecontrol = new Panel();
-            pictureBox1 = new PictureBox();
-            panelPrincipal.SuspendLayout();
+            panelPrincipal = new Panel();
+            label22 = new Label();
+            label28 = new Label();
+            pictureBox14 = new PictureBox();
+            pictureBox15 = new PictureBox();
+            pictureBox16 = new PictureBox();
+            label29 = new Label();
+            label30 = new Label();
+            label31 = new Label();
+            label32 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelcereal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -92,14 +100,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            paneldecontrol.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.Ivory;
-            button1.FlatStyle = FlatStyle.Popup;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
@@ -114,7 +125,8 @@
             // button2
             // 
             button2.BackColor = Color.Ivory;
-            button2.FlatStyle = FlatStyle.Popup;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
@@ -129,7 +141,8 @@
             // button3
             // 
             button3.BackColor = Color.Ivory;
-            button3.FlatStyle = FlatStyle.Popup;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe Print", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
@@ -140,24 +153,6 @@
             button3.Text = "Aceites";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
-            // 
-            // panelPrincipal
-            // 
-            panelPrincipal.BackColor = Color.White;
-            panelPrincipal.Controls.Add(label6);
-            panelPrincipal.Controls.Add(label5);
-            panelPrincipal.Controls.Add(pictureBox4);
-            panelPrincipal.Controls.Add(pictureBox3);
-            panelPrincipal.Controls.Add(pictureBox2);
-            panelPrincipal.Controls.Add(label4);
-            panelPrincipal.Controls.Add(label3);
-            panelPrincipal.Controls.Add(label2);
-            panelPrincipal.Controls.Add(label1);
-            panelPrincipal.Location = new Point(0, 0);
-            panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(436, 387);
-            panelPrincipal.TabIndex = 0;
-            panelPrincipal.Paint += panelPrincipal_Paint;
             // 
             // label6
             // 
@@ -217,7 +212,6 @@
             label4.Size = new Size(416, 110);
             label4.TabIndex = 3;
             label4.Text = "Los alimentos no perecederos constituyen aproximadamente el 60-70% \r\ndel inventario de un banco de alimentos debido a su facilidad de \r\nmanejo y larga duración.\r\n";
-            label4.Click += label4_Click;
             // 
             // label3
             // 
@@ -247,6 +241,19 @@
             label1.TabIndex = 0;
             label1.Text = "¿Qué son los Alimentos No Perecederos?";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Location = new Point(25, 28);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(54, 50);
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // panelcereal
             // 
             panelcereal.BackColor = Color.White;
@@ -260,7 +267,7 @@
             panelcereal.Controls.Add(label9);
             panelcereal.Controls.Add(label8);
             panelcereal.Controls.Add(label7);
-            panelcereal.Location = new Point(242, 27);
+            panelcereal.Location = new Point(259, 21);
             panelcereal.Name = "panelcereal";
             panelcereal.Size = new Size(436, 387);
             panelcereal.TabIndex = 1;
@@ -342,7 +349,6 @@
             label9.Size = new Size(70, 21);
             label9.TabIndex = 2;
             label9.Text = "¿Qué son?";
-            label9.Click += label9_Click;
             // 
             // label8
             // 
@@ -376,7 +382,7 @@
             panellegumbres.Controls.Add(label20);
             panellegumbres.Controls.Add(label15);
             panellegumbres.Controls.Add(label14);
-            panellegumbres.Location = new Point(242, 24);
+            panellegumbres.Location = new Point(265, 12);
             panellegumbres.Name = "panellegumbres";
             panellegumbres.Size = new Size(436, 387);
             panellegumbres.TabIndex = 2;
@@ -490,11 +496,10 @@
             panelaceites.Controls.Add(pictureBox11);
             panelaceites.Controls.Add(label23);
             panelaceites.Controls.Add(label21);
-            panelaceites.Location = new Point(243, 14);
+            panelaceites.Location = new Point(256, 15);
             panelaceites.Name = "panelaceites";
-            panelaceites.Size = new Size(436, 399);
+            panelaceites.Size = new Size(436, 403);
             panelaceites.TabIndex = 3;
-            panelaceites.Paint += panelaceites_Paint;
             // 
             // pictureBox13
             // 
@@ -576,32 +581,115 @@
             // label21
             // 
             label21.Font = new Font("Segoe Print", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label21.Location = new Point(43, 30);
+            label21.Location = new Point(43, 32);
             label21.Name = "label21";
             label21.Size = new Size(257, 26);
             label21.TabIndex = 1;
             label21.Text = "Gestión de Inventario: Aceites\r\n";
             // 
-            // paneldecontrol
+            // panelPrincipal
             // 
-            paneldecontrol.Controls.Add(panelPrincipal);
-            paneldecontrol.Location = new Point(242, 28);
-            paneldecontrol.Name = "paneldecontrol";
-            paneldecontrol.Size = new Size(436, 387);
-            paneldecontrol.TabIndex = 0;
+            panelPrincipal.BackColor = Color.White;
+            panelPrincipal.Controls.Add(label22);
+            panelPrincipal.Controls.Add(label28);
+            panelPrincipal.Controls.Add(pictureBox14);
+            panelPrincipal.Controls.Add(pictureBox15);
+            panelPrincipal.Controls.Add(pictureBox16);
+            panelPrincipal.Controls.Add(label29);
+            panelPrincipal.Controls.Add(label30);
+            panelPrincipal.Controls.Add(label31);
+            panelPrincipal.Controls.Add(label32);
+            panelPrincipal.Location = new Point(265, 21);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(447, 400);
+            panelPrincipal.TabIndex = 8;
             // 
-            // pictureBox1
+            // label22
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Location = new Point(25, 28);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(54, 50);
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            label22.AutoSize = true;
+            label22.Font = new Font("Segoe Print", 9F, FontStyle.Bold);
+            label22.Location = new Point(39, 244);
+            label22.Name = "label22";
+            label22.Size = new Size(233, 21);
+            label22.TabIndex = 8;
+            label22.Text = "Importancia en bancos de alimentos:";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Segoe Print", 9F, FontStyle.Bold);
+            label28.Location = new Point(152, 131);
+            label28.Name = "label28";
+            label28.Size = new Size(169, 21);
+            label28.TabIndex = 7;
+            label28.Text = "Características principales:";
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.BackgroundImage = (Image)resources.GetObject("pictureBox14.BackgroundImage");
+            pictureBox14.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox14.Location = new Point(202, 325);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(171, 62);
+            pictureBox14.TabIndex = 6;
+            pictureBox14.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            pictureBox15.BackgroundImage = (Image)resources.GetObject("pictureBox15.BackgroundImage");
+            pictureBox15.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox15.Location = new Point(3, 135);
+            pictureBox15.Name = "pictureBox15";
+            pictureBox15.Size = new Size(100, 92);
+            pictureBox15.TabIndex = 5;
+            pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            pictureBox16.BackgroundImage = (Image)resources.GetObject("pictureBox16.BackgroundImage");
+            pictureBox16.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox16.Location = new Point(322, 49);
+            pictureBox16.Name = "pictureBox16";
+            pictureBox16.Size = new Size(100, 76);
+            pictureBox16.TabIndex = 4;
+            pictureBox16.TabStop = false;
+            // 
+            // label29
+            // 
+            label29.Font = new Font("Segoe Print", 9F);
+            label29.Location = new Point(17, 264);
+            label29.Name = "label29";
+            label29.Size = new Size(416, 110);
+            label29.TabIndex = 3;
+            label29.Text = "Los alimentos no perecederos constituyen aproximadamente el 60-70% \r\ndel inventario de un banco de alimentos debido a su facilidad de \r\nmanejo y larga duración.\r\n";
+            // 
+            // label30
+            // 
+            label30.Font = new Font("Segoe Print", 9F);
+            label30.Location = new Point(109, 151);
+            label30.Name = "label30";
+            label30.Size = new Size(289, 92);
+            label30.TabIndex = 2;
+            label30.Text = "• Largo tiempo de vida útil (meses o años)\r\n• No requieren refrigeración\r\n• Almacenamiento a temperatura ambiente (15-25°C)\r\n• Menor riesgo de contaminación\r\n• Fácil transporte y distribución";
+            // 
+            // label31
+            // 
+            label31.Font = new Font("Segoe Print", 9F);
+            label31.Location = new Point(3, 49);
+            label31.Name = "label31";
+            label31.Size = new Size(324, 79);
+            label31.TabIndex = 1;
+            label31.Text = "Alimentos que duran mucho tiempo sin refrigerador. Se guardan en lugares frescos y secos, protegidos del sol y la humedad. Son la base de la alimentación en bancos de alimentos.";
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Segoe Print", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label32.Location = new Point(20, 20);
+            label32.Name = "label32";
+            label32.Size = new Size(313, 26);
+            label32.TabIndex = 0;
+            label32.Text = "¿Qué son los Alimentos No Perecederos?";
             // 
             // Clas2
             // 
@@ -610,10 +698,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelPrincipal);
             Controls.Add(panelaceites);
             Controls.Add(panellegumbres);
             Controls.Add(panelcereal);
-            Controls.Add(paneldecontrol);
             Controls.Add(pictureBox1);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -623,11 +711,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             Load += Form2_Load;
-            panelPrincipal.ResumeLayout(false);
-            panelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelcereal.ResumeLayout(false);
             panelcereal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -643,8 +730,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            paneldecontrol.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelPrincipal.ResumeLayout(false);
+            panelPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
             ResumeLayout(false);
         }
 
@@ -655,12 +745,7 @@
         private Button button3;
         private PictureBox pictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panelcereal;
         private FlowLayoutPanel flowLayoutPanel2;
-        private Panel panellegumbres;
-        private Panel panelaceites;
-        private Panel panelPrincipal;
-        private Panel paneldecontrol;
         private Label label1;
         private Label label3;
         private Label label2;
@@ -670,27 +755,29 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label7;
-        private Label label8;
-        private PictureBox pictureBox5;
-        private Label label9;
+        private Panel panelcereal;
         private Label label13;
         private Label label12;
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;
         private Label label11;
         private Label label10;
-        private Label label14;
-        private Label label15;
+        private PictureBox pictureBox5;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Panel panellegumbres;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox8;
         private Label label19;
         private Label label17;
         private Label label16;
         private Label label18;
         private Label label20;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox8;
-        private Label label21;
+        private Label label15;
+        private Label label14;
+        private Panel panelaceites;
         private PictureBox pictureBox13;
         private PictureBox pictureBox12;
         private Label label27;
@@ -699,5 +786,16 @@
         private Label label24;
         private PictureBox pictureBox11;
         private Label label23;
+        private Label label21;
+        private Panel panelPrincipal;
+        private Label label22;
+        private Label label28;
+        private PictureBox pictureBox14;
+        private PictureBox pictureBox15;
+        private PictureBox pictureBox16;
+        private Label label29;
+        private Label label30;
+        private Label label31;
+        private Label label32;
     }
 }

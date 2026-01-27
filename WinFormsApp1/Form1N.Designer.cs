@@ -409,9 +409,11 @@
             ptbReferencias.BackgroundImage = (Image)resources.GetObject("ptbReferencias.BackgroundImage");
             ptbReferencias.BackgroundImageLayout = ImageLayout.Stretch;
             ptbReferencias.Cursor = Cursors.Hand;
+            ptbReferencias.Image = (Image)resources.GetObject("ptbReferencias.Image");
             ptbReferencias.Location = new Point(12, 388);
             ptbReferencias.Name = "ptbReferencias";
             ptbReferencias.Size = new Size(55, 50);
+            ptbReferencias.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbReferencias.TabIndex = 12;
             ptbReferencias.TabStop = false;
             ptbReferencias.Click += ptbReferencias_Click;

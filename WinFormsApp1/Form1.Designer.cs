@@ -81,10 +81,10 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(396, 289);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(179, 23);
+            textBox1.Size = new Size(179, 29);
             textBox1.TabIndex = 4;
             // 
             // picinfo

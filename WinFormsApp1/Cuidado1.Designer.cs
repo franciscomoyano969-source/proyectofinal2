@@ -68,7 +68,6 @@
             label1.TabIndex = 0;
             label1.Text = "Cuidado nutricional";
             label1.UseMnemonic = false;
-            label1.Click += label1_Click;
             // 
             // cuidadonutricional
             // 
@@ -95,32 +94,31 @@
             // gruposnutricionales
             // 
             gruposnutricionales.AutoSize = true;
-            gruposnutricionales.BackColor = Color.Ivory;
+            gruposnutricionales.BackColor = Color.Transparent;
             gruposnutricionales.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             gruposnutricionales.Location = new Point(139, 328);
             gruposnutricionales.Name = "gruposnutricionales";
             gruposnutricionales.Size = new Size(177, 28);
             gruposnutricionales.TabIndex = 5;
             gruposnutricionales.Text = "Grupos nutricionales";
-            gruposnutricionales.Click += label2_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.Ivory;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(525, 327);
             label4.Name = "label4";
             label4.Size = new Size(185, 28);
             label4.TabIndex = 17;
             label4.Text = "Población beneficiaria";
-            label4.Click += label4_Click;
             // 
             // button1
             // 
-            button1.BackColor = Color.MintCream;
+            button1.BackColor = Color.Transparent;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(126, 162);
             button1.Name = "button1";
@@ -132,9 +130,10 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.MintCream;
+            button3.BackColor = Color.Transparent;
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Location = new Point(511, 162);
             button3.Name = "button3";
@@ -146,12 +145,13 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Location = new Point(711, 388);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(731, 388);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(77, 50);
+            pictureBox2.Size = new Size(57, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 22;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -172,12 +172,13 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox4.Cursor = Cursors.Hand;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(53, 388);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(77, 50);
+            pictureBox4.Size = new Size(56, 50);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 24;
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
@@ -193,7 +194,7 @@
             referenciaa.Controls.Add(label7);
             referenciaa.Controls.Add(label5);
             referenciaa.Controls.Add(label2);
-            referenciaa.Location = new Point(107, 148);
+            referenciaa.Location = new Point(94, 141);
             referenciaa.Name = "referenciaa";
             referenciaa.Size = new Size(398, 266);
             referenciaa.TabIndex = 25;
@@ -212,7 +213,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(16, 177);
+            label6.Location = new Point(13, 179);
             label6.Name = "label6";
             label6.Size = new Size(138, 21);
             label6.TabIndex = 14;
@@ -227,17 +228,17 @@
             label3.Size = new Size(395, 27);
             label3.TabIndex = 13;
             label3.Text = "https://www.fao.org/4/am044s/am044s.pdf";
-            label3.Click += label3_Click;
             // 
             // pictureBox5
             // 
             pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox5.Cursor = Cursors.Hand;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(338, 3);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(57, 50);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 12;
             pictureBox5.TabStop = false;
             pictureBox5.Click += pictureBox5_Click;
@@ -276,7 +277,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe Print", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(122, 14);
+            label2.Location = new Point(137, 3);
             label2.Name = "label2";
             label2.Size = new Size(102, 26);
             label2.TabIndex = 0;
@@ -289,7 +290,7 @@
             AutoSize = true;
             BackColor = SystemColors.Info;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(referenciaa);
             Controls.Add(pictureBox4);
@@ -304,6 +305,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Cuidado1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

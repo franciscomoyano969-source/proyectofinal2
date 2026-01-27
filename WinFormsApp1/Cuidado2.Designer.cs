@@ -67,8 +67,6 @@
             pictureBox11 = new PictureBox();
             label15 = new Label();
             pictureBox3 = new PictureBox();
-            panel1 = new Panel();
-            panelPrincipal = new Panel();
             panelEnergeticos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -86,14 +84,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.Ivory;
             button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.FlatStyle = FlatStyle.Popup;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
@@ -109,7 +107,8 @@
             // 
             button2.BackColor = Color.Ivory;
             button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.FlatStyle = FlatStyle.Popup;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
@@ -125,7 +124,8 @@
             // 
             button3.BackColor = Color.Ivory;
             button3.BackgroundImageLayout = ImageLayout.Zoom;
-            button3.FlatStyle = FlatStyle.Popup;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
@@ -141,7 +141,8 @@
             // 
             button4.BackColor = Color.Ivory;
             button4.BackgroundImageLayout = ImageLayout.Zoom;
-            button4.FlatStyle = FlatStyle.Popup;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
@@ -177,7 +178,7 @@
             panelEnergeticos.Controls.Add(pictureBox4);
             panelEnergeticos.Controls.Add(pictureBox2);
             panelEnergeticos.Controls.Add(label1);
-            panelEnergeticos.Location = new Point(244, 75);
+            panelEnergeticos.Location = new Point(269, 78);
             panelEnergeticos.Name = "panelEnergeticos";
             panelEnergeticos.Size = new Size(497, 321);
             panelEnergeticos.TabIndex = 11;
@@ -260,7 +261,7 @@
             panelConstructores.Controls.Add(label9);
             panelConstructores.Controls.Add(label7);
             panelConstructores.Controls.Add(label6);
-            panelConstructores.Location = new Point(1, 0);
+            panelConstructores.Location = new Point(272, 77);
             panelConstructores.Name = "panelConstructores";
             panelConstructores.Size = new Size(500, 321);
             panelConstructores.TabIndex = 14;
@@ -343,7 +344,7 @@
             panelReguladores.Controls.Add(label12);
             panelReguladores.Controls.Add(pictureBox8);
             panelReguladores.Controls.Add(label11);
-            panelReguladores.Location = new Point(244, 74);
+            panelReguladores.Location = new Point(271, 80);
             panelReguladores.Name = "panelReguladores";
             panelReguladores.Size = new Size(498, 318);
             panelReguladores.TabIndex = 15;
@@ -425,7 +426,7 @@
             panelGrasas.Controls.Add(label16);
             panelGrasas.Controls.Add(pictureBox11);
             panelGrasas.Controls.Add(label15);
-            panelGrasas.Location = new Point(243, 73);
+            panelGrasas.Location = new Point(268, 83);
             panelGrasas.Name = "panelGrasas";
             panelGrasas.Size = new Size(497, 321);
             panelGrasas.TabIndex = 16;
@@ -511,44 +512,27 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(panelPrincipal);
-            panel1.Controls.Add(panelConstructores);
-            panel1.Location = new Point(241, 74);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(497, 318);
-            panel1.TabIndex = 18;
-            // 
-            // panelPrincipal
-            // 
-            panelPrincipal.Location = new Point(2, 2);
-            panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(497, 318);
-            panelPrincipal.TabIndex = 17;
-            panelPrincipal.Paint += panelPrincipal_Paint;
-            // 
-            // Form2
+            // Cuidado2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(panelEnergeticos);
             Controls.Add(panelGrasas);
             Controls.Add(panelReguladores);
+            Controls.Add(panelConstructores);
             Controls.Add(pictureBox3);
             Controls.Add(label5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form2";
+            Name = "Cuidado2";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             Load += Form2_Load;
             panelEnergeticos.ResumeLayout(false);
@@ -572,7 +556,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -593,12 +576,10 @@
         private Panel panelConstructores;
         private Panel panelReguladores;
         private Panel panelGrasas;
-        private Panel panel1;
         private Label label3;
         private Label label4;
         private Label label7;
         private Label label6;
-        private Panel panelPrincipal;
         private PictureBox pictureBox1;
         private Label label10;
         private Label label9;

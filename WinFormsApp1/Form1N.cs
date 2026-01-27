@@ -41,6 +41,7 @@ namespace PROYECTO
             btnDistriAlimento.BackColor = ColorTranslator.FromHtml("#98FF98");
             btnGestPersonal.BackColor = ColorTranslator.FromHtml("#98FF98");
             btnApoyInstituciones.BackColor = ColorTranslator.FromHtml("#98FF98");
+            pnlReferencias.BackColor = ColorTranslator.FromHtml("#e5ff7d");
             Redondearpanel(pnlReferencias, 30);
             Redondearpanel(pnlMostrarInfo, 30);
 

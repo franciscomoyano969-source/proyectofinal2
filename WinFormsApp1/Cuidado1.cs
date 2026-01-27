@@ -1,7 +1,12 @@
 using Clasificación_de_alimentos;
-using Microsoft.VisualBasic.Devices;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Cuidado_nutricional
 {
@@ -27,6 +32,7 @@ namespace Cuidado_nutricional
         {
             InitializeComponent();
             RedondearFormulario(25);
+            referenciaa.BackColor = ColorTranslator.FromHtml("#e5ff7d");
         }
         private void Form1_Load(object sender, EventArgs e)
         {

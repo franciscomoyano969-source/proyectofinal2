@@ -31,21 +31,50 @@ namespace Cuidado_nutricional
         {
             InitializeComponent();
             RedondearFormulario(25);
+            Redondear_butom(button1, 40);
+            Redondear_butom(button2, 40);
+            Redondear_butom(button3, 40);
+            Redondear_butom(button4, 40);
+            Redondearpanel(panelEnergeticos, 30);
+            Redondearpanel(panelConstructores, 30);
+            Redondearpanel(panelReguladores, 30);
+            Redondearpanel(panelGrasas, 30);
+            button1.BackColor = ColorTranslator.FromHtml("#98FF98");
+            button2.BackColor = ColorTranslator.FromHtml("#98FF98");
+            button3.BackColor = ColorTranslator.FromHtml("#98FF98");
+            button4.BackColor = ColorTranslator.FromHtml("#98FF98");
+        }
+        static void Redondear_butom(Button boton, int radius)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, radius, radius, 180, 90);
+            gp.AddArc(boton.Width - radius, 0, radius, radius, 270, 90);
+            gp.AddArc(boton.Width - radius, boton.Height - radius, radius, radius, 0, 90);
+            gp.AddArc(0, boton.Height - radius, radius, radius, 90, 90);
+            gp.CloseFigure();
+            boton.Region = new Region(gp);
+        }
+        static void Redondearpanel(Panel p, int r)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, r, r, 180, 90);
+            gp.AddArc(p.Width - r, 0, r, r, 270, 90);
+            gp.AddArc(p.Width - r, p.Height - r, r, r, 0, 90);
+            gp.AddArc(0, p.Height - r, r, r, 90, 90);
+            gp.CloseFigure();
+            p.Region = new Region(gp);
         }
         private void OcultarPaneles()
         {
-            panelPrincipal.Visible = false;
             panelEnergeticos.Visible = false;
             panelConstructores.Visible = false;
             panelReguladores.Visible = false;
             panelGrasas.Visible = false;
-
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             OcultarPaneles();
-            panelPrincipal.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
