@@ -228,7 +228,7 @@ namespace PROYECTO
 
         private void ptbRegresar_Click(object sender, EventArgs e)
         {
-            Form formulario = new FormN1();
+            Form formulario = new Form2();
             formulario.Show();
             this.Hide();
         }

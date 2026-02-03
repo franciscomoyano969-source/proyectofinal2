@@ -3,7 +3,7 @@ using WinFormsApp1;
 
 namespace PROYECTO
 {
-    public partial class FormN1 : Form
+    public partial class Form2 : Form
     {
         // Declaramos las instancias una sola vez
         Form frmMateriaPrima = new GestionDeMate();
@@ -28,7 +28,7 @@ namespace PROYECTO
             this.Region = new Region(path);
         }
 
-        public FormN1()
+        public Form2()
         {
             InitializeComponent();
             // Llamada al método con un radio de 25 píxeles

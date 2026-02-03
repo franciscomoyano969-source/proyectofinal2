@@ -48,8 +48,8 @@ namespace WinFormsApp1
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            FormN1 formN1 = new FormN1();
-            formN1.Show();
+            Form2 form2 = new Form2();
+            form2.Show();
             this.Hide();
         }
 
@@ -57,6 +57,13 @@ namespace WinFormsApp1
         {
             Clas1 formClas1 = new Clas1();
             formClas1.Show();
+            this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FormN1 FormN1 = new FormN1();
+            FormN1.Show();
             this.Hide();
         }
     }

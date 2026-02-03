@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO
 {
-    partial class FormN1
+    partial class Form2
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormN1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             btnApoyInstituciones = new Button();
             btnGestPersonal = new Button();
             btnDistriAlimento = new Button();
@@ -442,7 +442,7 @@
             picjuego.TabStop = false;
             picjuego.Click += picjuego_Click;
             // 
-            // FormN1
+            // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -459,7 +459,7 @@
             Controls.Add(ptbReferencias);
             Controls.Add(pnlMostrarInfo);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormN1";
+            Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             pnlMostrarInfo.ResumeLayout(false);
