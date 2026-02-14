@@ -6,21 +6,17 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public class juego : Form
+    public class juego3 : Form
     {
         public Action NivelCompletado;
 
-        int filas = 15;
-        int columnas = 15;
-        int tamañoCelda = 25;
+        int filas = 20;
+        int columnas = 20;
+        int tamañoCelda = 20;
         char[,] tablero;
         Label[,] labels;
-        string[] palabras = { "DONACION", "ALIMENTOS", "SOLIDARIDAD", "VOLUNTARIO", "AYUDA", "COMUNIDAD", "ENTREGA", "APOYO", "SOPORTE", "BIENESTAR" };
-        Color[] paletaColores = {
-            Color.LightGreen, Color.LightSalmon, Color.LightSkyBlue, Color.Thistle,
-            Color.Khaki, Color.LightCoral, Color.Aquamarine, Color.SandyBrown,
-            Color.Plum, Color.YellowGreen
-        };
+        string[] palabras = { "SUPERVISION", "DISTRIBUCION", "INVENTARIO", "ASISTENCIA", "COORDINACION", "PLANIFICACION", "RECOLECCION", "BENEFICIARIO", "INSTITUCION", "ONG", "VOLUNTARIADO", "SOLIDARIDAD", "DONACION" };
+        Color[] paletaColores = {Color.LightGreen, Color.LightSalmon, Color.LightSkyBlue, Color.Thistle,Color.Khaki, Color.LightCoral, Color.Aquamarine, Color.SandyBrown,Color.Plum, Color.YellowGreen, Color.LightCyan, Color.MistyRose};
         int indiceColor = 0;
         HashSet<string> encontradas = new HashSet<string>();
         List<Label> seleccionActual = new List<Label>();
@@ -35,14 +31,14 @@ namespace WinFormsApp1
         int tiempoRestante;
         Label lblTiempo;
 
-        public juego()
+        public juego3()
         {
             ConfigurarInterfaz();
             IniciarJuego();
-            this.FormClosing += Juego_FormClosing;
+            this.FormClosing += Juego3_FormClosing;
         }
 
-        private void Juego_FormClosing(object sender, FormClosingEventArgs e)
+        private void Juego3_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (timerJuego != null)
             {
@@ -55,15 +51,16 @@ namespace WinFormsApp1
 
         private void ConfigurarInterfaz()
         {
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = FormBorderStyle.None; 
             this.BackColor = Color.White;
             this.Size = new Size((columnas * tamañoCelda) + 250, (filas * tamañoCelda) + 80);
             this.StartPosition = FormStartPosition.CenterScreen;
 
             panelSopa = new Panel
             {
-                Location = new Point(10, 30),
-                Size = new Size(columnas * tamañoCelda, filas * tamañoCelda),
+                Location = new Point(10, 10),
+                //Size = new Size(columnas * tamañoCelda, filas * tamañoCelda),
+                Size = new Size(400, 400),
                 BackColor = Color.FromArgb(160, Color.White),
                 BorderStyle = BorderStyle.None
             };
@@ -71,15 +68,16 @@ namespace WinFormsApp1
 
             panelLista = new Panel
             {
-                Location = new Point( panelSopa.Right+10, 30),
-                Size = new Size(100, 250),
+                Location = new Point(panelSopa.Right + 10, 10),
+                Size = new Size(120, 350),
                 BackColor = Color.FromArgb(200, Color.WhiteSmoke),
                 BorderStyle = BorderStyle.FixedSingle,
+                AutoScroll = true
             };
 
             lblTiempo = new Label
             {
-                Text = "Tiempo: 02:00",
+                Text = "Tiempo: 02:30",
                 Font = new Font("Segoe UI", 10, FontStyle.Bold),
                 ForeColor = Color.DarkRed,
                 AutoSize = true,
@@ -94,7 +92,8 @@ namespace WinFormsApp1
             timerJuego.Interval = 1000;
             timerJuego.Tick += TimerJuego_Tick;
 
-            tiempoRestante = 120;
+            tiempoRestante = 150;
+            lblTiempo.Text = "Tiempo: 02:30";
             timerJuego.Start();
         }
 
@@ -117,7 +116,7 @@ namespace WinFormsApp1
                         Size = new Size(tamañoCelda, tamañoCelda),
                         Location = new Point(c * tamañoCelda, f * tamañoCelda),
                         TextAlign = ContentAlignment.MiddleCenter,
-                        Font = new Font("Segoe UI", 8, FontStyle.Bold),
+                        Font = new Font("Segoe UI", 7, FontStyle.Bold),
                         BorderStyle = BorderStyle.FixedSingle,
                         Tag = new Point(f, c),
                         BackColor = Color.Transparent
@@ -135,9 +134,24 @@ namespace WinFormsApp1
             DibujarListaPalabras();
         }
 
+        // CORRECCIÓN: Reinicio idéntico a los demás, sin recrear el Form
+        private void ReiniciarJuego()
+        {
+            if (timerJuego != null) timerJuego.Stop();
+
+            tiempoRestante = 150;
+            lblTiempo.Text = "Tiempo: 02:30";
+
+            // Solo limpiamos y volvemos a iniciar la lógica
+            IniciarJuego();
+
+            if (timerJuego != null) timerJuego.Start();
+        }
+
         private void TimerJuego_Tick(object sender, EventArgs e)
         {
             if (this.IsDisposed) return;
+
             tiempoRestante--;
             int min = tiempoRestante / 60;
             int seg = tiempoRestante % 60;
@@ -147,16 +161,11 @@ namespace WinFormsApp1
             {
                 timerJuego.Stop();
                 DialogResult r = MessageBox.Show("Se acabó el tiempo. ¿Deseas reiniciar el nivel?", "Fin del juego", MessageBoxButtons.YesNo);
-                if (r == DialogResult.Yes) ReiniciarJuego(); else this.Close();
+                if (r == DialogResult.Yes)
+                    ReiniciarJuego();
+                else
+                    this.Close();
             }
-        }
-
-        private void ReiniciarJuego()
-        {
-            tiempoRestante = 120;
-            lblTiempo.Text = "Tiempo: 02:00";
-            timerJuego.Start();
-            IniciarJuego();
         }
 
         private void PanelSopa_MouseMove(object sender, MouseEventArgs e)
@@ -164,7 +173,10 @@ namespace WinFormsApp1
             if (estaArrastrando)
             {
                 Control hijo = panelSopa.GetChildAtPoint(e.Location);
-                if (hijo is Label lbl && lbl.Tag is Point puntoActual) ActualizarSeleccion(puntoActual);
+                if (hijo is Label lbl && lbl.Tag is Point puntoActual)
+                {
+                    ActualizarSeleccion(puntoActual);
+                }
             }
         }
 
@@ -212,7 +224,10 @@ namespace WinFormsApp1
                 {
                     Label lbl = labels[f, c];
                     seleccionActual.Add(lbl);
-                    if (lbl.BorderStyle != BorderStyle.None) lbl.BackColor = Color.SkyBlue;
+
+                    if (lbl.BorderStyle != BorderStyle.None)
+                        lbl.BackColor = Color.SkyBlue;
+
                     if (f == fin.X && c == fin.Y) break;
                     f += pasoF; c += pasoC;
                 }
@@ -223,15 +238,19 @@ namespace WinFormsApp1
         {
             Color col = paletaColores[indiceColor % paletaColores.Length];
             indiceColor++;
-            foreach (var lbl in seleccionActual) { lbl.BackColor = col; lbl.BorderStyle = BorderStyle.None; }
+            foreach (var lbl in seleccionActual)
+            {
+                lbl.BackColor = col;
+                lbl.BorderStyle = BorderStyle.None;
+            }
             encontradas.Add(p);
             etiquetasListaUI[p].BackColor = col;
-            etiquetasListaUI[p].Font = new Font("Segoe UI", 9, FontStyle.Strikeout | FontStyle.Bold);
+            etiquetasListaUI[p].Font = new Font("Segoe UI", 8, FontStyle.Strikeout | FontStyle.Bold);
 
             if (encontradas.Count == palabras.Length)
             {
                 timerJuego.Stop();
-                MessageBox.Show("¡Felicidades! Completaste el Nivel 1.");
+                MessageBox.Show("¡Felicidades! Completaste el Nivel Difícil.");
                 NivelCompletado?.Invoke();
                 this.Close();
             }
@@ -239,7 +258,8 @@ namespace WinFormsApp1
 
         private void LimpiarSeleccionVisual()
         {
-            foreach (Label lbl in labels) if (lbl.BackColor == Color.SkyBlue) lbl.BackColor = Color.Transparent;
+            foreach (Label lbl in labels)
+                if (lbl.BackColor == Color.SkyBlue) lbl.BackColor = Color.Transparent;
         }
 
         private void ColocarPalabras()
@@ -248,8 +268,10 @@ namespace WinFormsApp1
             foreach (string p in palabras)
             {
                 bool colocado = false;
-                while (!colocado)
+                int intentos = 0;
+                while (!colocado && intentos < 500)
                 {
+                    intentos++;
                     int f = rnd.Next(filas), c = rnd.Next(columnas), d = rnd.Next(4);
                     int df = dirs[d, 0], dc = dirs[d, 1];
                     if (ValidarEspacio(p, f, c, df, dc))
@@ -284,11 +306,6 @@ namespace WinFormsApp1
                     if (tablero[f, c] == '\0') labels[f, c].Text = ((char)('A' + rnd.Next(26))).ToString();
         }
 
-        private void InitializeComponent()
-        {
-
-        }
-
         private void DibujarListaPalabras()
         {
             panelLista.Controls.Clear();
@@ -298,10 +315,10 @@ namespace WinFormsApp1
             int y = 30;
             foreach (string p in palabras)
             {
-                Label lbl = new Label { Text = p, Font = new Font("Segoe UI", 9), Location = new Point(10, y), AutoSize = true };
+                Label lbl = new Label { Text = p, Font = new Font("Segoe UI", 8), Location = new Point(10, y), AutoSize = true };
                 panelLista.Controls.Add(lbl);
                 etiquetasListaUI.Add(p, lbl);
-                y += 22;
+                y += 20;
             }
         }
     }

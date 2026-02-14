@@ -58,7 +58,7 @@
             lblbienvenido.AutoSize = true;
             lblbienvenido.BackColor = Color.Transparent;
             lblbienvenido.FlatStyle = FlatStyle.Flat;
-            lblbienvenido.Font = new Font("Chocolate and Vanilla", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblbienvenido.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblbienvenido.Location = new Point(197, 19);
             lblbienvenido.Name = "lblbienvenido";
             lblbienvenido.Size = new Size(102, 47);
@@ -69,7 +69,7 @@
             // 
             lblclas.BackColor = Color.Transparent;
             lblclas.FlatStyle = FlatStyle.Flat;
-            lblclas.Font = new Font("Chocolate and Vanilla", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblclas.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblclas.Location = new Point(104, 365);
             lblclas.Name = "lblclas";
             lblclas.Size = new Size(122, 44);
@@ -80,7 +80,7 @@
             // 
             lblmatprima.BackColor = Color.Transparent;
             lblmatprima.FlatStyle = FlatStyle.Flat;
-            lblmatprima.Font = new Font("Chocolate and Vanilla", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblmatprima.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblmatprima.Location = new Point(337, 365);
             lblmatprima.Name = "lblmatprima";
             lblmatprima.Size = new Size(132, 44);
@@ -91,7 +91,7 @@
             // 
             lblguia.BackColor = Color.Transparent;
             lblguia.FlatStyle = FlatStyle.Flat;
-            lblguia.Font = new Font("Chocolate and Vanilla", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblguia.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblguia.Location = new Point(583, 365);
             lblguia.Name = "lblguia";
             lblguia.Size = new Size(120, 44);
@@ -102,7 +102,7 @@
             // 
             lblmenuinf.BackColor = Color.Transparent;
             lblmenuinf.FlatStyle = FlatStyle.Flat;
-            lblmenuinf.Font = new Font("Chocolate and Vanilla", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblmenuinf.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblmenuinf.Location = new Point(131, 85);
             lblmenuinf.Name = "lblmenuinf";
             lblmenuinf.Size = new Size(554, 60);
@@ -268,9 +268,9 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(738, 12);
+            pictureBox6.Location = new Point(748, 12);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(50, 50);
+            pictureBox6.Size = new Size(40, 40);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 9;
             pictureBox6.TabStop = false;

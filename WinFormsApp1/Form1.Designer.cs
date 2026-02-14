@@ -49,10 +49,10 @@
             lblnombre.AutoSize = true;
             lblnombre.BackColor = Color.Transparent;
             lblnombre.FlatStyle = FlatStyle.Flat;
-            lblnombre.Font = new Font("Gunplay 3D", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblnombre.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblnombre.Location = new Point(345, 49);
             lblnombre.Name = "lblnombre";
-            lblnombre.Size = new Size(265, 58);
+            lblnombre.Size = new Size(244, 55);
             lblnombre.TabIndex = 1;
             lblnombre.Text = "NutriBank";
             // 
@@ -127,9 +127,9 @@
             picsalir.BackColor = Color.Transparent;
             picsalir.BackgroundImageLayout = ImageLayout.Stretch;
             picsalir.Image = (Image)resources.GetObject("picsalir.Image");
-            picsalir.Location = new Point(850, 13);
+            picsalir.Location = new Point(878, 12);
             picsalir.Name = "picsalir";
-            picsalir.Size = new Size(60, 55);
+            picsalir.Size = new Size(40, 40);
             picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
             picsalir.TabIndex = 8;
             picsalir.TabStop = false;
@@ -137,7 +137,7 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
@@ -150,7 +150,7 @@
             Controls.Add(piclogo);
             Controls.Add(lblingnombre);
             Controls.Add(lblnombre);
-            Font = new Font("Gunplay 3D", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;

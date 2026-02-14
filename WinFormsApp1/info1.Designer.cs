@@ -51,20 +51,22 @@
             linkLabel1 = new LinkLabel();
             label2 = new Label();
             label1 = new Label();
+            picsalir = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picregresar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picjuego).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             paninfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picsalref).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
             SuspendLayout();
             // 
             // pangenmenu
             // 
             pangenmenu.BackColor = Color.Transparent;
-            pangenmenu.Font = new Font("Delius", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            pangenmenu.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pangenmenu.Location = new Point(196, 12);
             pangenmenu.Name = "pangenmenu";
-            pangenmenu.Size = new Size(590, 430);
+            pangenmenu.Size = new Size(547, 430);
             pangenmenu.TabIndex = 2;
             // 
             // picregresar
@@ -330,6 +332,19 @@
             label1.TabIndex = 1;
             label1.Text = "Referencias:";
             // 
+            // picsalir
+            // 
+            picsalir.BackColor = Color.Transparent;
+            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
+            picsalir.Location = new Point(745, 12);
+            picsalir.Name = "picsalir";
+            picsalir.Size = new Size(40, 40);
+            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            picsalir.TabIndex = 15;
+            picsalir.TabStop = false;
+            picsalir.Click += picsalir_Click;
+            // 
             // info1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -337,6 +352,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(797, 453);
+            Controls.Add(picsalir);
             Controls.Add(paninfo);
             Controls.Add(pictureBox3);
             Controls.Add(button5);
@@ -357,6 +373,7 @@
             paninfo.ResumeLayout(false);
             paninfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picsalref).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
             ResumeLayout(false);
         }
 
@@ -383,5 +400,6 @@
         private Label label6;
         private PictureBox picsalref;
         private LinkLabel linkLabel5;
+        private PictureBox picsalir;
     }
 }
