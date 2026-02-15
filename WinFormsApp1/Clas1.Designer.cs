@@ -45,18 +45,20 @@
             label7 = new Label();
             label8 = new Label();
             referenciaa = new Panel();
+            pictureBox5 = new PictureBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
             label6 = new Label();
-            pictureBox5 = new PictureBox();
+            picsalir = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             referenciaa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
             SuspendLayout();
             // 
             // CLa
@@ -223,7 +225,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(19, 114);
+            label7.Location = new Point(14, 108);
             label7.Name = "label7";
             label7.Size = new Size(74, 21);
             label7.TabIndex = 3;
@@ -233,7 +235,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(18, 163);
+            label8.Location = new Point(18, 157);
             label8.Name = "label8";
             label8.Size = new Size(96, 21);
             label8.TabIndex = 4;
@@ -242,12 +244,12 @@
             // referenciaa
             // 
             referenciaa.BackColor = Color.White;
+            referenciaa.Controls.Add(pictureBox5);
             referenciaa.Controls.Add(label12);
             referenciaa.Controls.Add(label11);
             referenciaa.Controls.Add(label10);
             referenciaa.Controls.Add(label9);
             referenciaa.Controls.Add(label6);
-            referenciaa.Controls.Add(pictureBox5);
             referenciaa.Controls.Add(label8);
             referenciaa.Controls.Add(label7);
             referenciaa.Controls.Add(label5);
@@ -258,11 +260,24 @@
             referenciaa.TabIndex = 14;
             referenciaa.Visible = false;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(354, 3);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(40, 40);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 20;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click_1;
+            // 
             // label12
             // 
             label12.Font = new Font("Segoe Print", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.Blue;
-            label12.Location = new Point(18, 229);
+            label12.Location = new Point(18, 231);
             label12.Name = "label12";
             label12.Size = new Size(376, 30);
             label12.TabIndex = 19;
@@ -272,7 +287,7 @@
             // 
             label11.Font = new Font("Segoe Print", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Blue;
-            label11.Location = new Point(18, 186);
+            label11.Location = new Point(18, 178);
             label11.Name = "label11";
             label11.Size = new Size(376, 30);
             label11.TabIndex = 18;
@@ -282,7 +297,7 @@
             // 
             label10.Font = new Font("Segoe Print", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Blue;
-            label10.Location = new Point(14, 135);
+            label10.Location = new Point(14, 133);
             label10.Name = "label10";
             label10.Size = new Size(376, 30);
             label10.TabIndex = 17;
@@ -292,7 +307,7 @@
             // 
             label9.Font = new Font("Segoe Print", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Blue;
-            label9.Location = new Point(14, 70);
+            label9.Location = new Point(18, 65);
             label9.Name = "label9";
             label9.Size = new Size(362, 43);
             label9.TabIndex = 16;
@@ -302,24 +317,24 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(18, 208);
+            label6.Location = new Point(18, 203);
             label6.Name = "label6";
             label6.Size = new Size(75, 21);
             label6.TabIndex = 13;
             label6.Text = "Procesados";
             // 
-            // pictureBox5
+            // picsalir
             // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox5.Cursor = Cursors.Hand;
-            pictureBox5.Location = new Point(338, 3);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(57, 50);
-            pictureBox5.TabIndex = 12;
-            pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
+            picsalir.BackColor = Color.Transparent;
+            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
+            picsalir.Location = new Point(748, 12);
+            picsalir.Name = "picsalir";
+            picsalir.Size = new Size(40, 40);
+            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            picsalir.TabIndex = 16;
+            picsalir.TabStop = false;
+            picsalir.Click += picsalir_Click;
             // 
             // Clas1
             // 
@@ -329,6 +344,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(800, 450);
+            Controls.Add(picsalir);
             Controls.Add(referenciaa);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -352,6 +368,7 @@
             referenciaa.ResumeLayout(false);
             referenciaa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -374,11 +391,12 @@
         private Label label7;
         private Label label8;
         private Panel referenciaa;
-        private PictureBox pictureBox5;
         private Label label12;
         private Label label11;
         private Label label10;
         private Label label9;
         private Label label6;
+        private PictureBox picsalir;
+        private PictureBox pictureBox5;
     }
 }

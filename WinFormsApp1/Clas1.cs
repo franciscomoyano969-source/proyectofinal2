@@ -67,16 +67,21 @@ namespace Clasificación_de_alimentos
             referenciaa.Visible = true;
             referenciaa.BringToFront();
         }
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            referenciaa.Visible = false;
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Cuidado1 formCuidado = new Cuidado1();
             formCuidado.Show();
             this.Hide();
+        }
+
+        private void picsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox5_Click_1(object sender, EventArgs e)
+        {
+            referenciaa.Visible = false;
         }
     }
 }

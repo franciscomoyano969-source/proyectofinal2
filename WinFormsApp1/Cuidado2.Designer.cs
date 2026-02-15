@@ -67,6 +67,7 @@
             pictureBox11 = new PictureBox();
             label15 = new Label();
             pictureBox3 = new PictureBox();
+            picsalir = new PictureBox();
             panelEnergeticos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -95,7 +97,7 @@
             button1.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(43, 99);
+            button1.Location = new Point(32, 100);
             button1.Name = "button1";
             button1.Size = new Size(179, 70);
             button1.TabIndex = 2;
@@ -112,7 +114,7 @@
             button2.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(43, 176);
+            button2.Location = new Point(32, 176);
             button2.Name = "button2";
             button2.Size = new Size(179, 69);
             button2.TabIndex = 3;
@@ -129,7 +131,7 @@
             button3.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(43, 255);
+            button3.Location = new Point(32, 251);
             button3.Name = "button3";
             button3.Size = new Size(179, 70);
             button3.TabIndex = 4;
@@ -146,7 +148,7 @@
             button4.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(43, 332);
+            button4.Location = new Point(32, 327);
             button4.Name = "button4";
             button4.Size = new Size(179, 67);
             button4.TabIndex = 5;
@@ -161,7 +163,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe Print", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(179, 3);
+            label5.Location = new Point(113, 6);
             label5.Name = "label5";
             label5.Size = new Size(445, 71);
             label5.TabIndex = 10;
@@ -182,7 +184,6 @@
             panelEnergeticos.Name = "panelEnergeticos";
             panelEnergeticos.Size = new Size(497, 321);
             panelEnergeticos.TabIndex = 11;
-            panelEnergeticos.Paint += panelEnergeticos_Paint;
             // 
             // label4
             // 
@@ -313,7 +314,6 @@
             label9.Size = new Size(398, 97);
             label9.TabIndex = 7;
             label9.Text = resources.GetString("label9.Text");
-            label9.Click += label9_Click;
             // 
             // label7
             // 
@@ -497,7 +497,6 @@
             label15.Size = new Size(146, 26);
             label15.TabIndex = 18;
             label15.Text = "Grasas Saludables";
-            label15.Click += label15_Click;
             // 
             // pictureBox3
             // 
@@ -512,6 +511,19 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
+            // picsalir
+            // 
+            picsalir.BackColor = Color.Transparent;
+            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
+            picsalir.Location = new Point(748, 12);
+            picsalir.Name = "picsalir";
+            picsalir.Size = new Size(40, 40);
+            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            picsalir.TabIndex = 17;
+            picsalir.TabStop = false;
+            picsalir.Click += picsalir_Click;
+            // 
             // Cuidado2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -519,6 +531,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(picsalir);
             Controls.Add(panelEnergeticos);
             Controls.Add(panelGrasas);
             Controls.Add(panelReguladores);
@@ -556,6 +569,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -599,5 +613,6 @@
         private PictureBox pictureBox12;
         private Label label18;
         private Label label17;
+        private PictureBox picsalir;
     }
 }

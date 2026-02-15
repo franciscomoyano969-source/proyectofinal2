@@ -248,5 +248,10 @@ namespace PROYECTO
         {
 
         }
+
+        private void picsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -43,7 +43,6 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             pnlReferencias = new Panel();
@@ -60,6 +59,7 @@
             ptbReferencias = new PictureBox();
             btnsalir = new PictureBox();
             picjuego = new PictureBox();
+            picsalir = new PictureBox();
             pnlMostrarInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -71,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)ptbReferencias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnsalir).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picjuego).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
             SuspendLayout();
             // 
             // btnApoyInstituciones
@@ -80,11 +81,11 @@
             btnApoyInstituciones.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnApoyInstituciones.Image = (Image)resources.GetObject("btnApoyInstituciones.Image");
             btnApoyInstituciones.ImageAlign = ContentAlignment.MiddleLeft;
-            btnApoyInstituciones.Location = new Point(12, 265);
+            btnApoyInstituciones.Location = new Point(5, 266);
             btnApoyInstituciones.Name = "btnApoyInstituciones";
-            btnApoyInstituciones.Size = new Size(196, 53);
+            btnApoyInstituciones.Size = new Size(176, 53);
             btnApoyInstituciones.TabIndex = 2;
-            btnApoyInstituciones.Text = "         Apoyo a Instituciones";
+            btnApoyInstituciones.Text = "          Apoyo a Instituciones";
             btnApoyInstituciones.UseVisualStyleBackColor = true;
             btnApoyInstituciones.Click += btnApoyInstituciones_Click;
             // 
@@ -96,9 +97,9 @@
             btnGestPersonal.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGestPersonal.Image = (Image)resources.GetObject("btnGestPersonal.Image");
             btnGestPersonal.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGestPersonal.Location = new Point(12, 207);
+            btnGestPersonal.Location = new Point(5, 207);
             btnGestPersonal.Name = "btnGestPersonal";
-            btnGestPersonal.Size = new Size(196, 53);
+            btnGestPersonal.Size = new Size(176, 53);
             btnGestPersonal.TabIndex = 2;
             btnGestPersonal.Text = "          Gestión de Personal";
             btnGestPersonal.UseVisualStyleBackColor = true;
@@ -109,12 +110,12 @@
             btnDistriAlimento.Cursor = Cursors.Hand;
             btnDistriAlimento.FlatAppearance.BorderSize = 0;
             btnDistriAlimento.FlatStyle = FlatStyle.Flat;
-            btnDistriAlimento.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDistriAlimento.Font = new Font("Segoe Print", 6.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDistriAlimento.Image = (Image)resources.GetObject("btnDistriAlimento.Image");
             btnDistriAlimento.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDistriAlimento.Location = new Point(12, 148);
+            btnDistriAlimento.Location = new Point(5, 148);
             btnDistriAlimento.Name = "btnDistriAlimento";
-            btnDistriAlimento.Size = new Size(196, 53);
+            btnDistriAlimento.Size = new Size(176, 53);
             btnDistriAlimento.TabIndex = 2;
             btnDistriAlimento.Text = "Distribución de Alimentos";
             btnDistriAlimento.TextAlign = ContentAlignment.MiddleRight;
@@ -126,14 +127,14 @@
             btnMatPrima.Cursor = Cursors.Hand;
             btnMatPrima.FlatAppearance.BorderSize = 0;
             btnMatPrima.FlatStyle = FlatStyle.Flat;
-            btnMatPrima.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMatPrima.Font = new Font("Segoe Print", 6.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMatPrima.Image = (Image)resources.GetObject("btnMatPrima.Image");
             btnMatPrima.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMatPrima.Location = new Point(12, 88);
+            btnMatPrima.Location = new Point(5, 89);
             btnMatPrima.Name = "btnMatPrima";
-            btnMatPrima.Size = new Size(196, 53);
+            btnMatPrima.Size = new Size(176, 53);
             btnMatPrima.TabIndex = 1;
-            btnMatPrima.Text = "Gestión de Materia Prima";
+            btnMatPrima.Text = "  Catálogo de Materia Prima";
             btnMatPrima.TextAlign = ContentAlignment.MiddleRight;
             btnMatPrima.UseVisualStyleBackColor = true;
             btnMatPrima.Click += btnMatPrima_Click;
@@ -151,19 +152,18 @@
             pnlMostrarInfo.Controls.Add(label6);
             pnlMostrarInfo.Controls.Add(label5);
             pnlMostrarInfo.Controls.Add(label4);
-            pnlMostrarInfo.Controls.Add(label3);
             pnlMostrarInfo.Controls.Add(label2);
             pnlMostrarInfo.Controls.Add(label1);
-            pnlMostrarInfo.Location = new Point(214, 12);
+            pnlMostrarInfo.Location = new Point(187, 12);
             pnlMostrarInfo.Name = "pnlMostrarInfo";
-            pnlMostrarInfo.Size = new Size(574, 426);
+            pnlMostrarInfo.Size = new Size(563, 426);
             pnlMostrarInfo.TabIndex = 1;
             // 
             // pictureBox5
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(142, 259);
+            pictureBox5.Location = new Point(107, 259);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(309, 162);
             pictureBox5.TabIndex = 11;
@@ -210,7 +210,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(339, 226);
+            label7.Location = new Point(337, 211);
             label7.Name = "label7";
             label7.Size = new Size(194, 21);
             label7.TabIndex = 6;
@@ -220,7 +220,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(336, 165);
+            label6.Location = new Point(336, 152);
             label6.Name = "label6";
             label6.Size = new Size(195, 21);
             label6.TabIndex = 5;
@@ -230,7 +230,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(66, 226);
+            label5.Location = new Point(66, 211);
             label5.Name = "label5";
             label5.Size = new Size(162, 21);
             label5.TabIndex = 4;
@@ -240,27 +240,17 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(66, 165);
+            label4.Location = new Point(66, 152);
             label4.Name = "label4";
             label4.Size = new Size(167, 21);
             label4.TabIndex = 3;
             label4.Text = "Catalogación de alimentos";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(170, 106);
-            label3.Name = "label3";
-            label3.Size = new Size(225, 28);
-            label3.TabIndex = 2;
-            label3.Text = "Visión General del Sistema";
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(48, 53);
+            label2.Location = new Point(29, 56);
             label2.Name = "label2";
             label2.Size = new Size(485, 69);
             label2.TabIndex = 1;
@@ -270,11 +260,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(66, 0);
+            label1.Location = new Point(89, 0);
             label1.Name = "label1";
-            label1.Size = new Size(465, 56);
+            label1.Size = new Size(353, 56);
             label1.TabIndex = 0;
-            label1.Text = "Bienvenido al sistema de distribución de matería prima \r\n                      y rotación de personal.";
+            label1.Text = "Sistema de distribución de matería prima \r\n                y rotación de personal.";
             // 
             // pnlReferencias
             // 
@@ -289,7 +279,7 @@
             pnlReferencias.Controls.Add(linkLabel1);
             pnlReferencias.Controls.Add(ptbCerrar);
             pnlReferencias.Controls.Add(label8);
-            pnlReferencias.Location = new Point(73, 118);
+            pnlReferencias.Location = new Point(47, 140);
             pnlReferencias.Name = "pnlReferencias";
             pnlReferencias.Size = new Size(323, 273);
             pnlReferencias.TabIndex = 12;
@@ -442,6 +432,19 @@
             picjuego.TabStop = false;
             picjuego.Click += picjuego_Click;
             // 
+            // picsalir
+            // 
+            picsalir.BackColor = Color.Transparent;
+            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
+            picsalir.Location = new Point(756, 12);
+            picsalir.Name = "picsalir";
+            picsalir.Size = new Size(40, 40);
+            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            picsalir.TabIndex = 16;
+            picsalir.TabStop = false;
+            picsalir.Click += picsalir_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -449,6 +452,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(picsalir);
             Controls.Add(pnlReferencias);
             Controls.Add(picjuego);
             Controls.Add(btnDistriAlimento);
@@ -475,6 +479,7 @@
             ((System.ComponentModel.ISupportInitialize)ptbReferencias).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnsalir).EndInit();
             ((System.ComponentModel.ISupportInitialize)picjuego).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
             ResumeLayout(false);
         }
 
@@ -489,7 +494,6 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private Label label3;
         private Label label2;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
@@ -510,5 +514,6 @@
         private Label label12;
         private PictureBox btnsalir;
         private PictureBox picjuego;
+        private PictureBox picsalir;
     }
 }

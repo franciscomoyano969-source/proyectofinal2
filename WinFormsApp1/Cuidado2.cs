@@ -71,25 +71,21 @@ namespace Cuidado_nutricional
             panelReguladores.Visible = false;
             panelGrasas.Visible = false;
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             OcultarPaneles();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             OcultarPaneles();
             panelEnergeticos.Visible = true;
         }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Cuidado1 formCuidado = new Cuidado1();
             formCuidado.Show();
             this.Hide();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             OcultarPaneles();
@@ -107,25 +103,9 @@ namespace Cuidado_nutricional
             OcultarPaneles();
             panelGrasas.Visible = true;
         }
-
-        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        private void picsalir_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panelEnergeticos_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }

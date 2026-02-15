@@ -66,6 +66,7 @@
             pictureBox13 = new PictureBox();
             label15 = new Label();
             label16 = new Label();
+            picsalir = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panelAdultos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -83,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -491,6 +493,19 @@
             label16.TabIndex = 19;
             label16.Text = "Personas Sin Hogar\r\n";
             // 
+            // picsalir
+            // 
+            picsalir.BackColor = Color.Transparent;
+            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
+            picsalir.Location = new Point(748, 12);
+            picsalir.Name = "picsalir";
+            picsalir.Size = new Size(40, 40);
+            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            picsalir.TabIndex = 18;
+            picsalir.TabStop = false;
+            picsalir.Click += picsalir_Click;
+            // 
             // Cuidado3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -498,6 +513,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(picsalir);
             Controls.Add(panelAdultos);
             Controls.Add(panniyjo);
             Controls.Add(panelfamilia);
@@ -533,6 +549,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
             ResumeLayout(false);
         }
 
@@ -574,5 +591,6 @@
         private PictureBox pictureBox13;
         private Label label15;
         private Label label16;
+        private PictureBox picsalir;
     }
 }

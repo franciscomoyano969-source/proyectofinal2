@@ -31,7 +31,7 @@ namespace WinFormsApp1
         int tiempoRestante;
         Label lblTiempo;
 
-        public juego3()
+        public juego3(info1 padre = null)
         {
             ConfigurarInterfaz();
             IniciarJuego();

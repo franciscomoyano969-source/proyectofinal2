@@ -113,5 +113,10 @@ namespace Cuidado_nutricional
             OcultarPaneles();
             panelpersonas.Visible = true;
         }
+
+        private void picsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -54,8 +54,8 @@ namespace Cuidado_nutricional
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Cuidado4 formNuevo = new Cuidado4();
-            formNuevo.Show();
+            Form5 form5 = new Form5();
+            form5.Show();
             this.Hide();
         }
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -74,6 +74,11 @@ namespace Cuidado_nutricional
             Clas1 formClas1 = new Clas1();
             formClas1.Show();
             this.Hide();
+        }
+
+        private void picsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

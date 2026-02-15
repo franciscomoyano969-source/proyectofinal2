@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class Intrucciones_sopa : Form
     {
-        // VARIABLES DE PROGRESO (Estáticas para que no se reinicien al cambiar de panel)
         public static bool NivelFacilCompletado = false;
         public static bool NivelMedioCompletado = false;
 
@@ -19,53 +13,47 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        // --- BOTÓN NIVEL FÁCIL (Juego 2) ---
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            juego2 nFacil = new juego2();
-
-            // Cuando gane el fácil, desbloquea el medio
-            nFacil.NivelCompletado = () => {
-                NivelFacilCompletado = true;
-            };
-
-            info1 fp2 = (info1)Application.OpenForms["info1"];
-            fp2.AbrirFormEnPanel(nFacil);
+            info1 fp = (info1)Application.OpenForms["info1"];
+            if (fp != null)
+            {
+                // Pasamos 'fp' como argumento para que el juego sepa a quién regresar
+                juego2 nFacil = new juego2(fp);
+                nFacil.NivelCompletado = () => { NivelFacilCompletado = true; };
+                fp.AbrirFormEnPanel(nFacil);
+            }
         }
 
-        // --- BOTÓN NIVEL MEDIO (Juego) ---
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (NivelFacilCompletado)
             {
-                juego nMedio = new juego();
-
-                // Cuando gane el medio, desbloquea el difícil
-                nMedio.NivelCompletado = () => {
-                    NivelMedioCompletado = true;
-                };
-
                 info1 fp = (info1)Application.OpenForms["info1"];
-                fp.AbrirFormEnPanel(nMedio);
+                if (fp != null)
+                {
+                    // Pasamos 'fp' como argumento para que el juego sepa a quién regresar
+                    juego nmedio = new juego(fp);
+                    nmedio.NivelCompletado = () => { NivelMedioCompletado = true; };
+                    fp.AbrirFormEnPanel(nmedio);
+                }
             }
-            else
-            {
-                MessageBox.Show("Debes completar el Nivel Fácil primero.", "Nivel Bloqueado");
-            }
+            else { MessageBox.Show("Debes completar el Nivel Fácil primero."); }
         }
 
-        // --- BOTÓN NIVEL DIFÍCIL (Juego 3) ---
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             if (NivelFacilCompletado && NivelMedioCompletado)
             {
                 info1 fp = (info1)Application.OpenForms["info1"];
-                fp.AbrirFormEnPanel(new juego3());
+                if (fp != null)
+                {
+                    // Debes asegurarte que la clase 'juego3' acepte un argumento Form en su constructor
+                    juego3 nDificil = new juego3(fp);
+                    fp.AbrirFormEnPanel(nDificil);
+                }
             }
-            else
-            {
-                MessageBox.Show("Debes completar el Nivel Medio primero.", "Nivel Bloqueado");
-            }
+            else { MessageBox.Show("Debes completar el Nivel Medio primero."); }
         }
     }
 }

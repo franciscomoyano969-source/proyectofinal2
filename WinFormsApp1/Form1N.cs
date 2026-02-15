@@ -67,25 +67,26 @@ namespace PROYECTO
             boton.Region = new Region(gp);
         }
 
-        private void AbrirFormEnPanel(Form formularioHijo)
+        public void AbrirFormEnPanel(Form formularioHijo)
         {
-            // 1. Limpiamos el panel de cualquier control previo sin destruir los datos
             if (this.pnlMostrarInfo.Controls.Count > 0)
             {
+                Form anterior = this.pnlMostrarInfo.Controls[0] as Form;
+                if (anterior != null)
+                {
+                    anterior.Close();
+                    anterior.Dispose();
+                }
                 this.pnlMostrarInfo.Controls.Clear();
             }
 
-            // 2. Configuramos el formulario hijo como un control interno
             formularioHijo.TopLevel = false;
             formularioHijo.FormBorderStyle = FormBorderStyle.None;
             formularioHijo.Dock = DockStyle.Fill;
-
-            // 3. Lo agregamos al panel pnlMostrarInfo y lo mostramos
             this.pnlMostrarInfo.Controls.Add(formularioHijo);
             this.pnlMostrarInfo.Tag = formularioHijo;
             formularioHijo.Show();
         }
-        private void btnMatPrima_Click(object sender, EventArgs e) => AbrirFormEnPanel(frmMateriaPrima);
 
         private void ShowFormInPanel(Form frm, string panelName)
         {
@@ -122,19 +123,21 @@ namespace PROYECTO
             frm.Show();
             frm.BringToFront();
         }
-        private void btnDistriAlimento_Click(object sender, EventArgs e) => AbrirFormEnPanel(frmDistribucion);
-
-
-        private void btnGestPersonal_Click(object sender, EventArgs e) => AbrirFormEnPanel(frmPersonal);
-
-
-        private void btnApoyInstituciones_Click(object sender, EventArgs e) => AbrirFormEnPanel(frmApoyo);
-
-        private void btnPractPrendido_Click(object sender, EventArgs e)
+        private void btnMatPrima_Click(object sender, EventArgs e)
         {
-            Form frmPractica = new PacticaLoAprendido();
-            frmPractica.Show();
-            this.Hide();
+            AbrirFormEnPanel(new GestionDeMate());
+        }
+        private void btnDistriAlimento_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new DistribucionDeAlimentos());
+        }
+        private void btnGestPersonal_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new GestionDePersonal());
+        }
+        private void btnApoyInstituciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ApoyoAInstituciones());
         }
         private void ptbReferencias_Click(object sender, EventArgs e)
         {
@@ -163,6 +166,11 @@ namespace PROYECTO
             PacticaLoAprendido juego = new PacticaLoAprendido();
             juego.Show();
             this.Hide();
+        }
+
+        private void picsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

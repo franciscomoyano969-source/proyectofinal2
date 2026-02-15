@@ -337,7 +337,7 @@
             picsalir.BackColor = Color.Transparent;
             picsalir.BackgroundImageLayout = ImageLayout.Stretch;
             picsalir.Image = (Image)resources.GetObject("picsalir.Image");
-            picsalir.Location = new Point(745, 12);
+            picsalir.Location = new Point(749, 12);
             picsalir.Name = "picsalir";
             picsalir.Size = new Size(40, 40);
             picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -378,7 +378,6 @@
         }
 
         #endregion
-        private Panel pangenmenu;
         private PictureBox picregresar;
         private PictureBox picjuego;
         private Button button1;
@@ -401,5 +400,6 @@
         private PictureBox picsalref;
         private LinkLabel linkLabel5;
         private PictureBox picsalir;
+        public Panel pangenmenu;
     }
 }

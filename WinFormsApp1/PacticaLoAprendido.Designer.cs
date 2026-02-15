@@ -203,8 +203,10 @@
             label1 = new Label();
             label2 = new Label();
             ptbRegresar = new PictureBox();
+            picsalir = new PictureBox();
             panelCrucigrama.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptbRegresar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
             SuspendLayout();
             // 
             // panelCrucigrama
@@ -1793,14 +1795,27 @@
             ptbRegresar.BackgroundImage = (Image)resources.GetObject("ptbRegresar.BackgroundImage");
             ptbRegresar.BackgroundImageLayout = ImageLayout.Stretch;
             ptbRegresar.Cursor = Cursors.Hand;
-            ptbRegresar.Location = new Point(585, 12);
+            ptbRegresar.Location = new Point(534, 2);
             ptbRegresar.Name = "ptbRegresar";
-            ptbRegresar.Size = new Size(50, 51);
+            ptbRegresar.Size = new Size(50, 50);
             ptbRegresar.TabIndex = 6;
             ptbRegresar.TabStop = false;
             ptbRegresar.Click += ptbRegresar_Click;
             ptbRegresar.MouseEnter += pictureBox1_MouseEnter;
             ptbRegresar.MouseLeave += pictureBox1_MouseLeave;
+            // 
+            // picsalir
+            // 
+            picsalir.BackColor = Color.Transparent;
+            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
+            picsalir.Location = new Point(595, 12);
+            picsalir.Name = "picsalir";
+            picsalir.Size = new Size(40, 40);
+            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            picsalir.TabIndex = 23;
+            picsalir.TabStop = false;
+            picsalir.Click += picsalir_Click;
             // 
             // PacticaLoAprendido
             // 
@@ -1809,6 +1824,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(647, 502);
+            Controls.Add(picsalir);
             Controls.Add(ptbRegresar);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -1826,6 +1842,7 @@
             panelCrucigrama.ResumeLayout(false);
             panelCrucigrama.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ptbRegresar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -2006,5 +2023,6 @@
         private Label label1;
         private Label label2;
         private PictureBox ptbRegresar;
+        private PictureBox picsalir;
     }
 }

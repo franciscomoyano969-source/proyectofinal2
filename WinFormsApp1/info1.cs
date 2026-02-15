@@ -32,6 +32,17 @@ namespace WinFormsApp1
             button5.BackColor = ColorTranslator.FromHtml("#98FF98");
             paninfo.BackColor = ColorTranslator.FromHtml("#e5ff7d");
         }
+        public void CambiarContenido(Form nuevoHijo)
+        {
+            this.pangenmenu.Controls.Clear(); // Limpiamos lo que haya (la sopa)
+
+            nuevoHijo.TopLevel = false;
+            nuevoHijo.FormBorderStyle = FormBorderStyle.None;
+            nuevoHijo.Dock = DockStyle.Fill;
+
+            this.pangenmenu.Controls.Add(nuevoHijo);
+            nuevoHijo.Show();
+        }
         public void AbrirFormEnPanel(Form fh)
         {
             if (this.pangenmenu.Controls.Count > 0)

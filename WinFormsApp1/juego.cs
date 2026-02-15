@@ -8,8 +8,11 @@ namespace WinFormsApp1
 {
     public class juego : Form
     {
+        // 1. VARIABLES DE NAVEGACIÓN
+        private info1 formularioPadre;
         public Action NivelCompletado;
 
+        // 2. CONFIGURACIÓN DEL TABLERO
         int filas = 15;
         int columnas = 15;
         int tamañoCelda = 25;
@@ -35,8 +38,10 @@ namespace WinFormsApp1
         int tiempoRestante;
         Label lblTiempo;
 
-        public juego()
+        // 3. CONSTRUCTOR (Aquí se guarda el padre para poder regresar)
+        public juego(info1 padre = null)
         {
+            this.formularioPadre = padre;
             ConfigurarInterfaz();
             IniciarJuego();
             this.FormClosing += Juego_FormClosing;
@@ -55,10 +60,9 @@ namespace WinFormsApp1
 
         private void ConfigurarInterfaz()
         {
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = FormBorderStyle.None; // Importante: Sin bordes para el panel
             this.BackColor = Color.White;
             this.Size = new Size((columnas * tamañoCelda) + 250, (filas * tamañoCelda) + 80);
-            this.StartPosition = FormStartPosition.CenterScreen;
 
             panelSopa = new Panel
             {
@@ -71,8 +75,8 @@ namespace WinFormsApp1
 
             panelLista = new Panel
             {
-                Location = new Point( panelSopa.Right+10, 30),
-                Size = new Size(100, 250),
+                Location = new Point(panelSopa.Right + 10, 30),
+                Size = new Size(120, 250),
                 BackColor = Color.FromArgb(200, Color.WhiteSmoke),
                 BorderStyle = BorderStyle.FixedSingle,
             };
@@ -146,40 +150,9 @@ namespace WinFormsApp1
             if (tiempoRestante <= 0)
             {
                 timerJuego.Stop();
-                DialogResult r = MessageBox.Show("Se acabó el tiempo. ¿Deseas reiniciar el nivel?", "Fin del juego", MessageBoxButtons.YesNo);
-                if (r == DialogResult.Yes) ReiniciarJuego(); else this.Close();
+                MessageBox.Show("Se acabó el tiempo.");
+                RegresarAlMenu();
             }
-        }
-
-        private void ReiniciarJuego()
-        {
-            tiempoRestante = 120;
-            lblTiempo.Text = "Tiempo: 02:00";
-            timerJuego.Start();
-            IniciarJuego();
-        }
-
-        private void PanelSopa_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (estaArrastrando)
-            {
-                Control hijo = panelSopa.GetChildAtPoint(e.Location);
-                if (hijo is Label lbl && lbl.Tag is Point puntoActual) ActualizarSeleccion(puntoActual);
-            }
-        }
-
-        private void Lbl_MouseDown(object sender, MouseEventArgs e)
-        {
-            estaArrastrando = true;
-            inicioSeleccion = (Point)((Label)sender).Tag;
-            LimpiarSeleccionVisual();
-            ActualizarSeleccion(inicioSeleccion);
-            ((Label)sender).Capture = false;
-        }
-
-        private void Lbl_MouseEnter(object sender, EventArgs e)
-        {
-            if (estaArrastrando) ActualizarSeleccion((Point)((Label)sender).Tag);
         }
 
         private void Lbl_MouseUp(object sender, MouseEventArgs e)
@@ -196,6 +169,39 @@ namespace WinFormsApp1
             }
             else LimpiarSeleccionVisual();
         }
+
+        private void MarcarComoEncontrada(string p)
+        {
+            Color col = paletaColores[indiceColor % paletaColores.Length];
+            indiceColor++;
+            foreach (var lbl in seleccionActual) { lbl.BackColor = col; lbl.BorderStyle = BorderStyle.None; }
+            encontradas.Add(p);
+            etiquetasListaUI[p].BackColor = col;
+            etiquetasListaUI[p].Font = new Font("Segoe UI", 9, FontStyle.Strikeout | FontStyle.Bold);
+
+            if (encontradas.Count == palabras.Length)
+            {
+                timerJuego.Stop();
+                MessageBox.Show("¡Felicidades! Completaste el Nivel Medio.");
+
+                // 1. Invocar el desbloqueo del siguiente nivel
+                NivelCompletado?.Invoke();
+
+                // 2. Regresar al menú de instrucciones
+                RegresarAlMenu();
+            }
+        }
+
+        private void RegresarAlMenu()
+        {
+            if (this.formularioPadre != null)
+            {
+                this.formularioPadre.AbrirFormEnPanel(new Intrucciones_sopa());
+            }
+            this.Close();
+        }
+
+        // --- MÉTODOS DE LÓGICA DE LA SOPA (SIN CAMBIOS) ---
 
         private void ActualizarSeleccion(Point fin)
         {
@@ -217,29 +223,6 @@ namespace WinFormsApp1
                     f += pasoF; c += pasoC;
                 }
             }
-        }
-
-        private void MarcarComoEncontrada(string p)
-        {
-            Color col = paletaColores[indiceColor % paletaColores.Length];
-            indiceColor++;
-            foreach (var lbl in seleccionActual) { lbl.BackColor = col; lbl.BorderStyle = BorderStyle.None; }
-            encontradas.Add(p);
-            etiquetasListaUI[p].BackColor = col;
-            etiquetasListaUI[p].Font = new Font("Segoe UI", 9, FontStyle.Strikeout | FontStyle.Bold);
-
-            if (encontradas.Count == palabras.Length)
-            {
-                timerJuego.Stop();
-                MessageBox.Show("¡Felicidades! Completaste el Nivel 1.");
-                NivelCompletado?.Invoke();
-                this.Close();
-            }
-        }
-
-        private void LimpiarSeleccionVisual()
-        {
-            foreach (Label lbl in labels) if (lbl.BackColor == Color.SkyBlue) lbl.BackColor = Color.Transparent;
         }
 
         private void ColocarPalabras()
@@ -284,11 +267,6 @@ namespace WinFormsApp1
                     if (tablero[f, c] == '\0') labels[f, c].Text = ((char)('A' + rnd.Next(26))).ToString();
         }
 
-        private void InitializeComponent()
-        {
-
-        }
-
         private void DibujarListaPalabras()
         {
             panelLista.Controls.Clear();
@@ -303,6 +281,34 @@ namespace WinFormsApp1
                 etiquetasListaUI.Add(p, lbl);
                 y += 22;
             }
+        }
+
+        private void PanelSopa_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (estaArrastrando)
+            {
+                Control hijo = panelSopa.GetChildAtPoint(e.Location);
+                if (hijo is Label lbl && lbl.Tag is Point puntoActual) ActualizarSeleccion(puntoActual);
+            }
+        }
+
+        private void Lbl_MouseDown(object sender, MouseEventArgs e)
+        {
+            estaArrastrando = true;
+            inicioSeleccion = (Point)((Label)sender).Tag;
+            LimpiarSeleccionVisual();
+            ActualizarSeleccion(inicioSeleccion);
+            ((Label)sender).Capture = false;
+        }
+
+        private void Lbl_MouseEnter(object sender, EventArgs e)
+        {
+            if (estaArrastrando) ActualizarSeleccion((Point)((Label)sender).Tag);
+        }
+
+        private void LimpiarSeleccionVisual()
+        {
+            foreach (Label lbl in labels) if (lbl.BackColor == Color.SkyBlue) lbl.BackColor = Color.Transparent;
         }
     }
 }

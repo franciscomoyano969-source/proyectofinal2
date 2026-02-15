@@ -21,7 +21,7 @@ namespace Clasificación_de_alimentos
             Redondear_butom(button1, 40);
             Redondear_butom(button2, 40);
             Redondear_butom(button3, 40);
-
+            Redondearpanel(panelPrincipal, 50);
             // Colores de botones
             button1.BackColor = ColorTranslator.FromHtml("#98FF98");
             button2.BackColor = ColorTranslator.FromHtml("#98FF98");
@@ -41,19 +41,36 @@ namespace Clasificación_de_alimentos
             path.CloseFigure();
             this.Region = new Region(path);
         }
-
         static void Redondearpanel(Panel p, int r)
         {
             GraphicsPath gp = new GraphicsPath();
-            int d = r * 2;
-            gp.AddArc(0, 0, d, d, 180, 90);
-            gp.AddArc(p.Width - d, 0, d, d, 270, 90);
-            gp.AddArc(p.Width - d, p.Height - d, d, d, 0, 90);
-            gp.AddArc(0, p.Height - d, d, d, 90, 90);
+            gp.AddArc(0, 0, r, r, 180, 90);
+            gp.AddArc(p.Width - r, 0, r, r, 270, 90);
+            gp.AddArc(p.Width - r, p.Height - r, r, r, 0, 90);
+            gp.AddArc(0, p.Height - r, r, r, 90, 90);
             gp.CloseFigure();
             p.Region = new Region(gp);
         }
+        public void AbrirFormEnPanel(Form fh)
+        {
+            if (this.panelPrincipal.Controls.Count > 0)
+            {
+                Form anterior = this.panelPrincipal.Controls[0] as Form;
+                if (anterior != null)
+                {
+                    anterior.Close();
+                    anterior.Dispose();
+                }
+                this.panelPrincipal.Controls.Clear();
+            }
 
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
+            this.panelPrincipal.Controls.Add(fh);
+            this.panelPrincipal.Tag = fh;
+            fh.Show();
+        }
         static void Redondear_butom(Button boton, int radius)
         {
             GraphicsPath gp = new GraphicsPath();
@@ -65,48 +82,19 @@ namespace Clasificación_de_alimentos
             gp.CloseFigure();
             boton.Region = new Region(gp);
         }
-
-        // --- LÓGICA DE PANELES ANIDADOS ---
-
-        private void CargarSubPanel(Panel panelHijo)
-        {
-            // 1. Limpiamos el panel principal de lo que tenga antes
-            if (panelPrincipal.Controls.Count > 0)
-                panelPrincipal.Controls.Clear();
-
-            // 2. Configuramos el panel que va a entrar
-            panelHijo.Dock = DockStyle.Fill; // Se ajusta al tamaño de panelPrincipal
-            panelHijo.Visible = true;
-
-            // 3. Lo metemos dentro del principal
-            panelPrincipal.Controls.Add(panelHijo);
-
-            // 4. (Opcional) Redondear el panel una vez que ya tiene su tamaño final
-            Redondearpanel(panelHijo, 25);
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            // Al cargar, escondemos los subpaneles para que no estorben
-            panelcereal.Visible = false;
-            panellegumbres.Visible = false;
-            panelaceites.Visible = false;
-            panelPrincipal.Visible = true;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            CargarSubPanel(panelcereal);
+            AbrirFormEnPanel(new Cereales());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CargarSubPanel(panellegumbres);
+            AbrirFormEnPanel(new legumbres());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            CargarSubPanel(panelaceites);
+            AbrirFormEnPanel(new aceites());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -114,6 +102,11 @@ namespace Clasificación_de_alimentos
             Clas1 formClas1 = new Clas1();
             formClas1.Show();
             this.Hide();
+        }
+
+        private void picsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

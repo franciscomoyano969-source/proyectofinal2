@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
+using WinFormsApp1;
 
 namespace Clasificación_de_alimentos
 {
@@ -34,10 +35,7 @@ namespace Clasificación_de_alimentos
             Redondear_butom(button1, 40);
             Redondear_butom(button2, 40);
             Redondear_butom(button3, 40);
-            Redondearpanel(panelPrincipal, 30);
-            Redondearpanel(panelEnlatados, 30);
-            Redondearpanel(panelConservas, 30);
-            Redondearpanel(panelCongelados, 30);
+            Redondearpanel(panelPrincipal, 50);
             button1.BackColor = ColorTranslator.FromHtml("#98FF98");
             button2.BackColor = ColorTranslator.FromHtml("#98FF98");
             button3.BackColor = ColorTranslator.FromHtml("#98FF98");
@@ -52,6 +50,26 @@ namespace Clasificación_de_alimentos
             gp.CloseFigure();
             boton.Region = new Region(gp);
         }
+        public void AbrirFormEnPanel(Form fh)
+        {
+            if (this.panelPrincipal.Controls.Count > 0)
+            {
+                Form anterior = this.panelPrincipal.Controls[0] as Form;
+                if (anterior != null)
+                {
+                    anterior.Close();
+                    anterior.Dispose();
+                }
+                this.panelPrincipal.Controls.Clear();
+            }
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
+            this.panelPrincipal.Controls.Add(fh);
+            this.panelPrincipal.Tag = fh;
+            fh.Show();
+        }
         static void Redondearpanel(Panel p, int r)
         {
             GraphicsPath gp = new GraphicsPath();
@@ -62,43 +80,30 @@ namespace Clasificación_de_alimentos
             gp.CloseFigure();
             p.Region = new Region(gp);
         }
-        private void OcultarPaneles()
-        {
-            panelPrincipal.Visible = false;
-            panelEnlatados.Visible = false;
-            panelConservas.Visible = false;
-            panelCongelados.Visible = false;
-        }
-        private void Form4_Load(object sender, EventArgs e)
-        {
-            OcultarPaneles();
-            panelPrincipal.Visible = true;
-        }
-
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Clas1 clas1 = new Clas1();
             clas1.Show();
             this.Hide();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            OcultarPaneles();
-            panelEnlatados.Visible = true;
+            AbrirFormEnPanel(new enlatados());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OcultarPaneles();
-            panelConservas.Visible = true;
+            AbrirFormEnPanel(new conservas());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OcultarPaneles();
-            panelCongelados.Visible = true;
+            AbrirFormEnPanel(new congelados());
+        }
+
+        private void picsalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

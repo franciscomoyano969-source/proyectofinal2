@@ -48,12 +48,14 @@
             label7 = new Label();
             label5 = new Label();
             label2 = new Label();
+            picsalir = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             referenciaa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -62,7 +64,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe Print", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(203, 51);
+            label1.Location = new Point(268, 50);
             label1.Name = "label1";
             label1.Size = new Size(371, 62);
             label1.TabIndex = 0;
@@ -85,7 +87,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(149, 63);
+            pictureBox1.Location = new Point(214, 63);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 49);
             pictureBox1.TabIndex = 11;
@@ -175,7 +177,7 @@
             pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox4.Cursor = Cursors.Hand;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(53, 388);
+            pictureBox4.Location = new Point(24, 388);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(56, 50);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -194,7 +196,7 @@
             referenciaa.Controls.Add(label7);
             referenciaa.Controls.Add(label5);
             referenciaa.Controls.Add(label2);
-            referenciaa.Location = new Point(94, 141);
+            referenciaa.Location = new Point(67, 142);
             referenciaa.Name = "referenciaa";
             referenciaa.Size = new Size(398, 266);
             referenciaa.TabIndex = 25;
@@ -283,6 +285,19 @@
             label2.TabIndex = 0;
             label2.Text = "Referencias:";
             // 
+            // picsalir
+            // 
+            picsalir.BackColor = Color.Transparent;
+            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
+            picsalir.Location = new Point(748, 12);
+            picsalir.Name = "picsalir";
+            picsalir.Size = new Size(40, 40);
+            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
+            picsalir.TabIndex = 18;
+            picsalir.TabStop = false;
+            picsalir.Click += picsalir_Click;
+            // 
             // Cuidado1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -292,6 +307,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(picsalir);
             Controls.Add(referenciaa);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -315,6 +331,7 @@
             referenciaa.ResumeLayout(false);
             referenciaa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -340,5 +357,6 @@
         private Label label9;
         private Label label6;
         private Label label3;
+        private PictureBox picsalir;
     }
 }

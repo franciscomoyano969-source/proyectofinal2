@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
+using WinFormsApp1;
 
 namespace Clasificación_de_alimentos
 {
@@ -31,10 +32,7 @@ namespace Clasificación_de_alimentos
         {
             InitializeComponent();
             RedondearFormulario(25);
-            Redondearpanel(panelPrincipal, 30);
-            Redondearpanel(panelaFrutas, 30);
-            Redondearpanel(panelVerduras, 30);
-            Redondearpanel(panelCarnes, 30);
+            Redondearpanel(panel2, 50);
             Redondear_butom(button1, 40);
             Redondear_butom(button2, 40);
             Redondear_butom(button3, 40);
@@ -62,62 +60,49 @@ namespace Clasificación_de_alimentos
             gp.CloseFigure();
             boton.Region = new Region(gp);
         }
-        private void OcultarPaneles()
-        {
-            panelPrincipal.Visible = false;
-            panelaFrutas.Visible = false;
-            panelVerduras.Visible = false;
-            panelCarnes.Visible = false;
-        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Clas1 formClas1 = new Clas1();
             formClas1.Show();
             this.Hide();
         }
+        public void AbrirFormEnPanel(Form fh)
+        {
+            if (this.panel2.Controls.Count > 0)
+            {
+                Form anterior = this.panel2.Controls[0] as Form;
+                if (anterior != null)
+                {
+                    anterior.Close();
+                    anterior.Dispose();
+                }
+                this.panel2.Controls.Clear();
+            }
 
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
+            this.panel2.Controls.Add(fh);
+            this.panel2.Tag = fh;
+            fh.Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            OcultarPaneles();
-            panelaFrutas.Visible = true;
+            AbrirFormEnPanel(new frutas());
         }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            OcultarPaneles();
-            panelPrincipal.Visible = true;
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            OcultarPaneles();
-            panelVerduras.Visible = true;
+            AbrirFormEnPanel(new verduras());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OcultarPaneles();
-            panelCarnes.Visible = true;
+            AbrirFormEnPanel(new Carnes());
         }
 
-        private void panelaceites_Paint(object sender, PaintEventArgs e)
+        private void picsalir_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }
