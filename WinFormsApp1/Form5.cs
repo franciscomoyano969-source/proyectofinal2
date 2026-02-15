@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clasificación_de_alimentos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,17 +15,17 @@ namespace Cuidado_nutricional
     {
         private void RedondearFormulario(int radio)
         {
-            // Crea una nueva ruta de gráficos para definir la forma
+
             GraphicsPath path = new GraphicsPath();
             int d = radio * 2;
 
-            // Añade los arcos para las cuatro esquinas
+
             path.AddArc(0, 0, d, d, 180, 90);
             path.AddArc(this.Width - d, 0, d, d, 270, 90);
             path.AddArc(this.Width - d, this.Height - d, d, d, 0, 90);
             path.AddArc(0, this.Height - d, d, d, 90, 90);
 
-            // Cierra la figura y aplica la nueva región al formulario
+
             path.CloseFigure();
             this.Region = new Region(path);
         }
@@ -54,24 +55,16 @@ namespace Cuidado_nutricional
             timer1.Stop();
             puntaje = 0;
             indice = 0;
-            tiempoTotal = 0;
-
             lblPuntaje.Text = "Puntaje: 0";
-            label16.Text = "00:00";
-
-
+            tiempoTotal = 0;
             btnVerificar.Enabled = true;
             btnSiguiente.Enabled = false;
-
             btnComenzar.Enabled = true;
-
             lblResultado.Visible = false;
             panel5.Visible = true;
             btnComenzar.Enabled = true;
             txtRespuesta.Enabled = false;
         }
-
-
         void MostrarTiempo()
         {
             int minutos = tiempoTotal / 60;
@@ -306,9 +299,13 @@ namespace Cuidado_nutricional
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Cuidado1 cui1 = new Cuidado1();
-            cui1.Show();
-            this.Hide();
+            Cuidado1 inicio = Application.OpenForms["cuidado1"] as Cuidado1;
+
+            if (inicio != null)
+            {
+                inicio.Show();
+                this.Close();
+            }
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -372,21 +369,41 @@ namespace Cuidado_nutricional
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+            tiempoTotal--;
+            MostrarTiempo();
+
             if (tiempoTotal <= 0)
             {
                 timer1.Stop();
 
-                lblResultado.Text = "⏱ Tiempo agotado";
-                lblResultado.ForeColor = Color.Red;
-                lblResultado.Visible = true;
+                DialogResult resultado = MessageBox.Show(
+                    "⏱ Se acabó el tiempo\n¿Desea volver a intentarlo?",
+                    "Tiempo agotado",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
-                btnVerificar.Enabled = false;
-                btnSiguiente.Enabled = true;
-                return;
+                // --- SOLUCIÓN ---
+                if (resultado == DialogResult.Yes)
+                {
+                    // Llamamos a reiniciar para limpiar puntaje e índice antes de volver a empezar
+                    ReiniciarJuego();
+
+                    // Preparamos la interfaz para que el usuario elija dificultad o pulse comenzar
+                    lblResultado.Text = "Puntaje reiniciado. ¡Elige dificultad o pulsa comenzar!";
+                    lblResultado.ForeColor = Color.Blue;
+                    lblResultado.Visible = true;
+
+                    panel5.Visible = true; // Mostramos el panel de inicio
+                    btnComenzar.Enabled = true;
+                }
+                else
+                {
+                    ReiniciarJuego();
+                    panel6.Visible = false;
+                    panel3.Visible = true; // Regresa al menú principal
+                }
             }
-
-            tiempoTotal--;
-            MostrarTiempo();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -411,9 +428,28 @@ namespace Cuidado_nutricional
 
         }
 
-        private void picsalir_Click(object sender, EventArgs e)
+        private void pictureBox9_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show("¿Deseas cerrar el juego y salir de la aplicación?","Cerrar Aplicación",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning );
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Deseas cerrar la aplicación?", "Cerrar Aplicación",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

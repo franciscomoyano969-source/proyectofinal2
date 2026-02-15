@@ -83,7 +83,7 @@
             label17 = new Label();
             btnComenzar = new Button();
             panel3 = new Panel();
-            picsalir = new PictureBox();
+            pictureBox10 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -92,6 +92,7 @@
             pictureBox3 = new PictureBox();
             panel4 = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            pictureBox9 = new PictureBox();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -100,13 +101,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel5.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picsalir).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
             // 
             // lblOracion
@@ -629,7 +631,7 @@
             label16.Name = "label16";
             label16.Size = new Size(65, 28);
             label16.TabIndex = 17;
-            label16.Text = "00:00";
+            label16.Text = "00:01";
             label16.Click += label16_Click;
             // 
             // pictureBox8
@@ -659,7 +661,7 @@
             panel5.BackColor = Color.White;
             panel5.Controls.Add(label17);
             panel5.Controls.Add(btnComenzar);
-            panel5.Location = new Point(29, 178);
+            panel5.Location = new Point(28, 179);
             panel5.Name = "panel5";
             panel5.Size = new Size(593, 260);
             panel5.TabIndex = 17;
@@ -693,30 +695,29 @@
             // 
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
-            panel3.Controls.Add(picsalir);
+            panel3.Controls.Add(pictureBox10);
             panel3.Controls.Add(pictureBox5);
             panel3.Controls.Add(pictureBox4);
             panel3.Controls.Add(pictureBox6);
             panel3.Controls.Add(label15);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new Point(-2, 0);
+            panel3.Location = new Point(2, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(802, 450);
             panel3.TabIndex = 15;
             panel3.Paint += panel3_Paint;
             // 
-            // picsalir
+            // pictureBox10
             // 
-            picsalir.BackColor = Color.Transparent;
-            picsalir.BackgroundImageLayout = ImageLayout.Stretch;
-            picsalir.Image = (Image)resources.GetObject("picsalir.Image");
-            picsalir.Location = new Point(759, 3);
-            picsalir.Name = "picsalir";
-            picsalir.Size = new Size(40, 40);
-            picsalir.SizeMode = PictureBoxSizeMode.StretchImage;
-            picsalir.TabIndex = 22;
-            picsalir.TabStop = false;
-            picsalir.Click += picsalir_Click;
+            pictureBox10.BackColor = Color.Transparent;
+            pictureBox10.BackgroundImage = (Image)resources.GetObject("pictureBox10.BackgroundImage");
+            pictureBox10.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox10.Location = new Point(751, 12);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(40, 40);
+            pictureBox10.TabIndex = 22;
+            pictureBox10.TabStop = false;
+            pictureBox10.Click += pictureBox10_Click;
             // 
             // pictureBox5
             // 
@@ -809,6 +810,18 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick_1;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.BackColor = Color.Transparent;
+            pictureBox9.BackgroundImage = (Image)resources.GetObject("pictureBox9.BackgroundImage");
+            pictureBox9.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox9.Location = new Point(745, 12);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(40, 40);
+            pictureBox9.TabIndex = 18;
+            pictureBox9.TabStop = false;
+            pictureBox9.Click += pictureBox9_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -817,12 +830,14 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(panel3);
+            Controls.Add(pictureBox9);
             Controls.Add(panel5);
             Controls.Add(pictureBox3);
             Controls.Add(label1);
             Controls.Add(panel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form5";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form5";
             Load += Form5_Load;
             panel2.ResumeLayout(false);
@@ -838,13 +853,14 @@
             panel5.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picsalir).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -912,6 +928,7 @@
         private Label label33;
         private Label label32;
         private Label label31;
-        private PictureBox picsalir;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox9;
     }
 }

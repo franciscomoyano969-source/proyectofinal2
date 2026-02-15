@@ -37,7 +37,14 @@ namespace WinFormsApp1
         }
         private void picsalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show("¿Deseas cerrar la aplicación?", "Cerrar Aplicación",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
