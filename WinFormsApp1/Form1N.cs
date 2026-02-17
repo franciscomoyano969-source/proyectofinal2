@@ -1,3 +1,4 @@
+using ParteInteractivaPY;
 using System.Drawing.Drawing2D;
 using WinFormsApp1;
 
@@ -163,8 +164,8 @@ namespace PROYECTO
 
         private void picjuego_Click(object sender, EventArgs e)
         {
-            PacticaLoAprendido juego = new PacticaLoAprendido();
-            juego.Show();
+            CRUCIGRAMA crucigrama = new CRUCIGRAMA();
+            crucigrama.Show();
             this.Hide();
         }
 
