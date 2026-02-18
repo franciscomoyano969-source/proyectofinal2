@@ -47,26 +47,7 @@
             label4 = new Label();
             label3 = new Label();
             panel6 = new Panel();
-            label39 = new Label();
-            label38 = new Label();
-            label37 = new Label();
-            label36 = new Label();
-            label35 = new Label();
-            label34 = new Label();
-            label33 = new Label();
-            label32 = new Label();
-            label31 = new Label();
-            label30 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            label22 = new Label();
-            label23 = new Label();
-            label24 = new Label();
-            label25 = new Label();
-            label26 = new Label();
-            label27 = new Label();
+            lblListaPistas = new Label();
             label28 = new Label();
             label29 = new Label();
             btnSiguiente = new Button();
@@ -129,7 +110,6 @@
             txtRespuesta.Size = new Size(72, 22);
             txtRespuesta.TabIndex = 1;
             txtRespuesta.TextAlign = HorizontalAlignment.Center;
-            txtRespuesta.TextChanged += txtRespuesta_TextChanged;
             // 
             // label1
             // 
@@ -286,26 +266,7 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(label39);
-            panel6.Controls.Add(label38);
-            panel6.Controls.Add(label37);
-            panel6.Controls.Add(label36);
-            panel6.Controls.Add(label35);
-            panel6.Controls.Add(label34);
-            panel6.Controls.Add(label33);
-            panel6.Controls.Add(label32);
-            panel6.Controls.Add(label31);
-            panel6.Controls.Add(label30);
-            panel6.Controls.Add(label18);
-            panel6.Controls.Add(label19);
-            panel6.Controls.Add(label20);
-            panel6.Controls.Add(label21);
-            panel6.Controls.Add(label22);
-            panel6.Controls.Add(label23);
-            panel6.Controls.Add(label24);
-            panel6.Controls.Add(label25);
-            panel6.Controls.Add(label26);
-            panel6.Controls.Add(label27);
+            panel6.Controls.Add(lblListaPistas);
             panel6.Controls.Add(label28);
             panel6.Controls.Add(label29);
             panel6.Location = new Point(601, 3);
@@ -313,205 +274,15 @@
             panel6.Size = new Size(164, 351);
             panel6.TabIndex = 18;
             // 
-            // label39
+            // lblListaPistas
             // 
-            label39.AutoSize = true;
-            label39.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label39.Location = new Point(91, 324);
-            label39.Name = "label39";
-            label39.Size = new Size(68, 19);
-            label39.TabIndex = 21;
-            label39.Text = "solidaridad";
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label38.Location = new Point(97, 295);
-            label38.Name = "label38";
-            label38.Size = new Size(57, 19);
-            label38.TabIndex = 20;
-            label38.Text = "consumo";
-            // 
-            // label37
-            // 
-            label37.AutoSize = true;
-            label37.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label37.Location = new Point(97, 272);
-            label37.Name = "label37";
-            label37.Size = new Size(50, 19);
-            label37.TabIndex = 19;
-            label37.Text = "sistema";
-            // 
-            // label36
-            // 
-            label36.AutoSize = true;
-            label36.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label36.Location = new Point(100, 244);
-            label36.Name = "label36";
-            label36.Size = new Size(42, 19);
-            label36.TabIndex = 18;
-            label36.Text = "fresco";
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label35.Location = new Point(91, 217);
-            label35.Name = "label35";
-            label35.Size = new Size(59, 19);
-            label35.TabIndex = 17;
-            label35.Text = "ambiente";
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label34.Location = new Point(80, 191);
-            label34.Name = "label34";
-            label34.Size = new Size(62, 19);
-            label34.TabIndex = 16;
-            label34.Text = "minerales";
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label33.Location = new Point(75, 162);
-            label33.Name = "label33";
-            label33.Size = new Size(86, 19);
-            label33.TabIndex = 15;
-            label33.Text = "enfermedades";
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label32.Location = new Point(77, 136);
-            label32.Name = "label32";
-            label32.Size = new Size(73, 19);
-            label32.TabIndex = 14;
-            label32.Text = "clasificación";
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label31.Location = new Point(78, 109);
-            label31.Name = "label31";
-            label31.Size = new Size(64, 19);
-            label31.TabIndex = 13;
-            label31.Text = "caducidad";
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Font = new Font("Segoe Print", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label30.Location = new Point(74, 82);
-            label30.Name = "label30";
-            label30.Size = new Size(93, 19);
-            label30.TabIndex = 12;
-            label30.Text = "descomposición";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe Print", 8.25F);
-            label18.Location = new Point(8, 325);
-            label18.Name = "label18";
-            label18.Size = new Size(44, 19);
-            label18.TabIndex = 11;
-            label18.Text = "estado";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe Print", 8.25F);
-            label19.Location = new Point(2, 297);
-            label19.Name = "label19";
-            label19.Size = new Size(88, 19);
-            label19.TabIndex = 10;
-            label19.Text = "contaminación";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe Print", 8.25F);
-            label20.Location = new Point(3, 272);
-            label20.Name = "label20";
-            label20.Size = new Size(85, 19);
-            label20.TabIndex = 9;
-            label20.Text = "vulnerabilidad";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe Print", 8.25F);
-            label21.Location = new Point(5, 245);
-            label21.Name = "label21";
-            label21.Size = new Size(80, 19);
-            label21.TabIndex = 8;
-            label21.Text = "refrigeración";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Segoe Print", 8.25F);
-            label22.Location = new Point(5, 218);
-            label22.Name = "label22";
-            label22.Size = new Size(59, 19);
-            label22.TabIndex = 7;
-            label22.Text = "categoría";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Segoe Print", 8.25F);
-            label23.Location = new Point(4, 191);
-            label23.Name = "label23";
-            label23.Size = new Size(64, 19);
-            label23.TabIndex = 6;
-            label23.Text = "distribuye";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Segoe Print", 8.25F);
-            label24.Location = new Point(6, 162);
-            label24.Name = "label24";
-            label24.Size = new Size(50, 19);
-            label24.TabIndex = 5;
-            label24.Text = "familias";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Segoe Print", 8.25F);
-            label25.Location = new Point(4, 136);
-            label25.Name = "label25";
-            label25.Size = new Size(71, 19);
-            label25.TabIndex = 4;
-            label25.Text = "desperdicio";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Segoe Print", 8.25F);
-            label26.Location = new Point(4, 109);
-            label26.Name = "label26";
-            label26.Size = new Size(62, 19);
-            label26.TabIndex = 3;
-            label26.Text = "seguridad";
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Font = new Font("Segoe Print", 8.25F);
-            label27.Location = new Point(5, 82);
-            label27.Name = "label27";
-            label27.Size = new Size(37, 19);
-            label27.TabIndex = 2;
-            label27.Text = "salud";
+            lblListaPistas.AutoSize = true;
+            lblListaPistas.Font = new Font("Segoe Print", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblListaPistas.Location = new Point(6, 73);
+            lblListaPistas.Name = "lblListaPistas";
+            lblListaPistas.Size = new Size(54, 21);
+            lblListaPistas.TabIndex = 2;
+            lblListaPistas.Text = "label18";
             // 
             // label28
             // 
@@ -573,7 +344,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.PapayaWhip;
+            label2.BackColor = Color.Transparent;
+            label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(185, 51);
             label2.Name = "label2";
@@ -591,7 +363,6 @@
             lblPuntaje.Size = new Size(136, 37);
             lblPuntaje.TabIndex = 3;
             lblPuntaje.Text = "Puntaje: 0 ";
-            lblPuntaje.Click += lblPuntaje_Click;
             // 
             // lblResultado
             // 
@@ -632,7 +403,6 @@
             label16.Size = new Size(65, 28);
             label16.TabIndex = 17;
             label16.Text = "00:01";
-            label16.Click += label16_Click;
             // 
             // pictureBox8
             // 
@@ -643,7 +413,6 @@
             pictureBox8.Size = new Size(100, 43);
             pictureBox8.TabIndex = 18;
             pictureBox8.TabStop = false;
-            pictureBox8.Click += pictureBox8_Click;
             // 
             // pictureBox7
             // 
@@ -665,7 +434,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(593, 260);
             panel5.TabIndex = 17;
-            panel5.Paint += panel5_Paint;
             // 
             // label17
             // 
@@ -703,9 +471,8 @@
             panel3.Controls.Add(pictureBox2);
             panel3.Location = new Point(2, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(802, 450);
+            panel3.Size = new Size(800, 450);
             panel3.TabIndex = 15;
-            panel3.Paint += panel3_Paint;
             // 
             // pictureBox10
             // 
@@ -839,7 +606,6 @@
             Name = "Form5";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form5";
-            Load += Form5_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
@@ -906,29 +672,10 @@
         private Panel panel5;
         private Label label17;
         private Panel panel6;
-        private Label label30;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Label label21;
-        private Label label22;
-        private Label label23;
-        private Label label24;
-        private Label label25;
-        private Label label26;
-        private Label label27;
         private Label label28;
         private Label label29;
-        private Label label39;
-        private Label label38;
-        private Label label37;
-        private Label label36;
-        private Label label35;
-        private Label label34;
-        private Label label33;
-        private Label label32;
-        private Label label31;
         private PictureBox pictureBox10;
         private PictureBox pictureBox9;
+        private Label lblListaPistas;
     }
 }
