@@ -34,12 +34,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            BackColor = Color.White;
+            BackColor = Color.Transparent;
             Name = "ucMapaMental";
-            Size = new Size(0, 0);
-            Load += ucMapaMental_Load;
+            Size = new Size(438, 329);
             ResumeLayout(false);
 
         }

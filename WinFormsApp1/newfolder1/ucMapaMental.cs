@@ -1,235 +1,183 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp5.NewFolder1
 {
     public partial class ucMapaMental : UserControl
     {
-        //variables priv mapa
-        private Panel pnlCentral;
-        private Label lblCentral;
-        private Button btnRecepcion, btnAlmacenamiento, btnEntrega, btnNormas;
+        private List<string> accionesRecepcion = new()
+        {
+            "Verificar la integridad del paquete recibido.",
+            "Registrar la recepción en el sistema.",
+            "Notificar al remitente sobre la recepción.",
+            "Sanitizar empaques externos antes de su ingreso."
+        };
+
+        private bool[] completado = new bool[4];
+        private RoundedPanel pnlCentral, pnlReto;
+        private Label lblCentral, lblProgreso;
+        private RoundedButton btnRecepcion, btnAlmacenamiento, btnEntrega, btnNormas;
         private ProgressBar pbProgreso;
-        private Label lblProgreso;
-        private Panel pnlReto; // Panel para mostrar retos
-        private List<string> accionesRecepcion = new List<string> { "Verificar la integridad del paquete recibido.", "Registrar la recepción en el sistema.", "Notificar al remitente sobre la recepción.", "Sanitizar empaques externos antes de su ingreso." };
-        private List<string> accionesAlmacenamiento = new List<string> { "Cotejar la cantidad recibida contra la nota de entrega.", "Actualizar el inventario físico/digital del comedor.", "Comunicar la renovación de insumos al equipo de cocina.", "Rotar el stock colocando lo nuevo detrás de lo antiguo." };
-        private List<string> accionesEntrega = new List<string> { "Validar la identidad del beneficiario.", "Registrar entrega para el cierre de cuenta diario.", "Confirmar con el responsable el destino final.", "Trasladar el alimento al usuario final." };
-        private bool[] completado = new bool[4]; // Progreso: 0=Recepcion, 1=Almacenamiento, 2=Entrega, 3=Normas
+
+        Color crema = Color.FromArgb(255, 248, 240);
+        Color verdeMenta = Color.FromArgb(184, 242, 230);
+        Color azulCielo = Color.FromArgb(198, 226, 255);
+        Color rosa = Color.FromArgb(255, 205, 210);
+        Color amarillo = Color.FromArgb(255, 236, 179);
 
         public ucMapaMental()
         {
             InitializeComponent();
-            InicializarMapa();
+            this.Size = new Size(687, 442);
+            ConstruirUI();
         }
 
-        private void ucMapaMental_Load(object sender, EventArgs e)
+        private void ConstruirUI()
         {
-        }
+            this.BackColor = crema;
 
-        private void InicializarMapa()
-        {
-            // Nodo central
-            pnlCentral = new Panel { AutoSize = true, Location = new Point(135, 50), BackColor = Color.LightGreen, BorderStyle = BorderStyle.FixedSingle };
-            lblCentral = new Label { Text = "Gestión Segura de Donaciones", Font = new Font("segoe print", 12, FontStyle.Bold), AutoSize = true, Location = new Point(20, 30) };
+            pnlCentral = new RoundedPanel() { BackColor = Color.FromArgb(198, 242, 235), Size = new Size(350, 40) };
+            pnlCentral.Location = new Point((687 - 350) / 2, 15);
+            lblCentral = new Label() { Text = "Gestión Segura de Donaciones", Font = new Font("Segoe UI", 10, FontStyle.Bold), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter };
             pnlCentral.Controls.Add(lblCentral);
-            this.Controls.Add(pnlCentral);
 
-            // Ramas (tarjetas grandes)
-            btnRecepcion = new Button { Text = "1. Recepción", Font = new Font("segoe print", 8, FontStyle.Bold), Size = new Size(150, 50), Location = new Point(90, 160), BackColor = Color.LightBlue };
-            btnRecepcion.Click += BtnRecepcion_Click;
-            this.Controls.Add(btnRecepcion);
+            int wBtn = 158;
+            int hBtn = 55;
+            int gap = 10;
+            int startX = (687 - (wBtn * 4 + gap * 3)) / 2;
 
-            btnAlmacenamiento = new Button { Text = "2. Almacenamiento", Font = new Font("segoe print", 8, FontStyle.Bold), Size = new Size(150, 50), Location = new Point(300, 160), BackColor = Color.LightYellow };
-            btnAlmacenamiento.Click += BtnAlmacenamiento_Click;
-            this.Controls.Add(btnAlmacenamiento);
+            btnRecepcion = CrearBoton("1. Recepción", azulCielo, new Point(startX, 65), wBtn, hBtn);
+            btnAlmacenamiento = CrearBoton("2. Almacenamiento", amarillo, new Point(startX + wBtn + gap, 65), wBtn, hBtn);
+            btnEntrega = CrearBoton("3. Entrega", rosa, new Point(startX + (wBtn + gap) * 2, 65), wBtn, hBtn);
+            btnNormas = CrearBoton("4. Normas", verdeMenta, new Point(startX + (wBtn + gap) * 3, 65), wBtn, hBtn);
 
-            btnEntrega = new Button { Text = "3. Entrega/Distribución", Font = new Font("segoe print", 8, FontStyle.Bold), Size = new Size(150, 50), Location = new Point(90, 210), BackColor = Color.LightCoral };
-            btnEntrega.Click += BtnEntrega_Click;
-            this.Controls.Add(btnEntrega);
+            pbProgreso = new ProgressBar() { Maximum = 4, Width = 450, Height = 15, Location = new Point((687 - 450) / 2, 135) };
+            lblProgreso = new Label() { Text = "Progreso 0/4", AutoSize = true, Location = new Point((687 - 70) / 2, 155), Font = new Font("Segoe UI", 8, FontStyle.Bold) };
 
-            btnNormas = new Button { Text = "4. Normas Sanitarias", Font = new Font("segoe print", 8, FontStyle.Bold), Size = new Size(150, 50), Location = new Point(300, 210), BackColor = Color.LightPink };
-            btnNormas.Click += BtnNormas_Click;
-            this.Controls.Add(btnNormas);
+            pnlReto = new RoundedPanel()
+            {
+                BackColor = Color.White,
+                Size = new Size(650, 250),
+                Location = new Point((687 - 650) / 2, 180),
+                Visible = false,
+                BorderStyle = BorderStyle.FixedSingle // LÍNEAS DERECHA Y ABAJO ACTIVADAS
+            };
 
-            // Barra de progreso
-            pbProgreso = new ProgressBar { Size = new Size(400, 20), Location = new Point(75, 270), Maximum = 4 };
-            lblProgreso = new Label { Text = "Progreso: 0/4", Location = new Point(100, 290), BackColor = Color.White, Font = new Font("segoe print", 8, FontStyle.Bold) };
-            this.Controls.Add(pbProgreso);
-            this.Controls.Add(lblProgreso);
+            this.Controls.AddRange(new Control[] { pnlCentral, btnRecepcion, btnAlmacenamiento, btnEntrega, btnNormas, pbProgreso, lblProgreso, pnlReto });
 
-            // Panel para retos
-            pnlReto = new Panel { AutoSize = true, Location = new Point(95, 320), BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle, Visible = false };
-            this.Controls.Add(pnlReto);
+            btnRecepcion.Click += (s, e) => MostrarJuegoRecepcion();
+            btnAlmacenamiento.Click += (s, e) => MostrarJuegoAlmacenamiento();
+            btnEntrega.Click += (s, e) => MostrarJuegoEntrega();
+            btnNormas.Click += (s, e) => MostrarJuegoNormas();
+        }
+
+        private void MostrarJuegoRecepcion()
+        {
+            if (completado[0]) { MessageBox.Show("Ya has completado este protocolo correctamente.", "Sección Finalizada"); return; }
+            pnlReto.Controls.Clear(); pnlReto.Visible = true;
+            Label t = new Label() { Text = "Ordena el protocolo de recepción (Arrastra para ordenar):", AutoSize = true, Location = new Point(20, 15), Font = new Font("Segoe UI", 9, FontStyle.Bold) };
+            FlowLayoutPanel lista = new FlowLayoutPanel() { Location = new Point(20, 45), Size = new Size(610, 160), FlowDirection = FlowDirection.TopDown, WrapContents = false, AllowDrop = true };
+            foreach (var acc in accionesRecepcion.OrderBy(x => Guid.NewGuid()))
+            {
+                Panel p = new Panel() { Size = new Size(590, 32), BackColor = Color.LightBlue, BorderStyle = BorderStyle.FixedSingle, Margin = new Padding(0, 0, 0, 5) };
+                Label l = new Label() { Text = acc, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, Padding = new Padding(10, 0, 0, 0) };
+                p.Controls.Add(l);
+                p.MouseDown += (s, e) => p.DoDragDrop(p, DragDropEffects.Move);
+                l.MouseDown += (s, e) => p.DoDragDrop(p, DragDropEffects.Move);
+                lista.Controls.Add(p);
+            }
+            lista.DragEnter += (s, e) => e.Effect = DragDropEffects.Move;
+            lista.DragDrop += (s, e) => {
+                Panel data = (Panel)e.Data.GetData(typeof(Panel));
+                Control dest = lista.GetChildAtPoint(lista.PointToClient(new Point(e.X, e.Y)));
+                int idx = lista.Controls.GetChildIndex(dest);
+                if (idx >= 0) lista.Controls.SetChildIndex(data, idx);
+            };
+            Button v = new Button() { Text = "Validar Orden", Location = new Point(20, 210), Size = new Size(110, 30) };
+            v.Click += (s, e) => {
+                bool ok = true;
+                for (int i = 0; i < lista.Controls.Count; i++)
+                    if (lista.Controls[i].Controls[0].Text != accionesRecepcion[i]) ok = false;
+                if (ok) { MessageBox.Show("¡Correcto!"); completado[0] = true; pnlReto.Visible = false; ActualizarProgreso(); }
+                else MessageBox.Show("Orden incorrecto.");
+            };
+            pnlReto.Controls.AddRange(new Control[] { t, lista, v });
+        }
+
+        private void MostrarJuegoAlmacenamiento()
+        {
+            if (completado[1]) { MessageBox.Show("Esta actividad ya fue completada exitosamente.", "Aviso"); return; }
+            pnlReto.Controls.Clear(); pnlReto.Visible = true;
+            Label q = new Label() { Text = "¿Qué acción garantiza la seguridad alimentaria a largo plazo?", AutoSize = true, Location = new Point(20, 20), Font = new Font("Segoe UI", 9, FontStyle.Bold) };
+            RadioButton r1 = new RadioButton() { Text = "Rotar stock colocando lo nuevo detrás (FIFO).", Location = new Point(25, 55), AutoSize = true };
+            RadioButton r2 = new RadioButton() { Text = "Almacenar sin registrar para agilizar.", Location = new Point(25, 85), AutoSize = true };
+            RadioButton r3 = new RadioButton() { Text = "Mezclar productos antiguos y nuevos.", Location = new Point(25, 115), AutoSize = true };
+            Button v = new Button() { Text = "Validar", Location = new Point(20, 160), Size = new Size(100, 30) };
+            v.Click += (s, e) => { if (r1.Checked) { completado[1] = true; pnlReto.Visible = false; ActualizarProgreso(); } else MessageBox.Show("Incorrecto."); };
+            pnlReto.Controls.AddRange(new Control[] { q, r1, r2, r3, v });
+        }
+
+        private void MostrarJuegoEntrega()
+        {
+            if (completado[2]) { MessageBox.Show("El registro de entrega ya está listo.", "Información"); return; }
+            pnlReto.Controls.Clear(); pnlReto.Visible = true;
+            Label q = new Label() { Text = "¿Es obligatorio registrar la salida de productos?", AutoSize = true, Location = new Point(20, 20), Font = new Font("Segoe UI", 9, FontStyle.Bold) };
+            RadioButton r1 = new RadioButton() { Text = "Sí, siempre se debe registrar.", Location = new Point(25, 55), AutoSize = true };
+            RadioButton r2 = new RadioButton() { Text = "No, si es un beneficiario frecuente.", Location = new Point(25, 85), AutoSize = true };
+            Button v = new Button() { Text = "Validar", Location = new Point(20, 130), Size = new Size(100, 30) };
+            v.Click += (s, e) => { if (r1.Checked) { completado[2] = true; pnlReto.Visible = false; ActualizarProgreso(); } else MessageBox.Show("Incorrecto."); };
+            pnlReto.Controls.AddRange(new Control[] { q, r1, r2, v });
+        }
+
+        private void MostrarJuegoNormas()
+        {
+            if (completado[3]) { MessageBox.Show("Ya terminaste la validación de normas sanitarias.", "Completado"); return; }
+            pnlReto.Controls.Clear(); pnlReto.Visible = true;
+            Label q = new Label() { Text = "¿Qué donación debe rechazarse por seguridad?", AutoSize = true, Location = new Point(20, 20), Font = new Font("Segoe UI", 9, FontStyle.Bold) };
+            CheckBox c1 = new CheckBox() { Text = "Conservas selladas correctamente.", Location = new Point(25, 55), AutoSize = true };
+            CheckBox c2 = new CheckBox() { Text = "Producto casero sin etiqueta.", Location = new Point(25, 85), AutoSize = true };
+            CheckBox c3 = new CheckBox() { Text = "Granos en empaque original íntegro.", Location = new Point(25, 115), AutoSize = true };
+            Button v = new Button() { Text = "Validar", Location = new Point(20, 160), Size = new Size(100, 30) };
+            v.Click += (s, e) => { if (c2.Checked && !c1.Checked && !c3.Checked) { completado[3] = true; pnlReto.Visible = false; ActualizarProgreso(); } else MessageBox.Show("Incorrecto."); };
+            pnlReto.Controls.AddRange(new Control[] { q, c1, c2, c3, v });
         }
 
         private void ActualizarProgreso()
         {
-            int completadas = completado.Count(b => b);
-            pbProgreso.Value = completadas;
-            lblProgreso.Text = $"Progreso: {completadas}/4";
-            if (completadas == 4)
-            {
-                MessageBox.Show("¡Has completado el mapa mental correctamente! Has reforzado los protocolos de bioseguridad.", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        private void BtnRecepcion_Click(object sender, EventArgs e)
-        {
-            if (completado[0]) return;
-            pnlReto.Controls.Clear();
-            pnlReto.Visible = true;
-            Label lblInstruccion = new Label { Text = "Ordena correctamente el protocolo de recepción (arrastra las tarjetas):", Location = new Point(10, 10), AutoSize = true };
-            pnlReto.Controls.Add(lblInstruccion);
-
-            // Crear tarjetas movibles (usando Panels para drag-and-drop)
-            List<Panel> tarjetas = new List<Panel>();
-            int yPos = 60; // Posición Y inicial
-            foreach (var accion in accionesRecepcion.OrderBy(x => Guid.NewGuid())) // Desordenar
-            {
-                Panel pnlTarjeta = new Panel { Size = new Size(400, 30), Location = new Point(10, yPos), BackColor = Color.LightBlue, BorderStyle = BorderStyle.FixedSingle };
-                Label lblTexto = new Label { Text = accion, AutoSize = true, Location = new Point(5, 5) };
-                pnlTarjeta.Controls.Add(lblTexto);
-                pnlTarjeta.MouseDown += (s, ev) => { pnlTarjeta.DoDragDrop(pnlTarjeta, DragDropEffects.Move); }; // Iniciar drag
-                pnlReto.AllowDrop = true;
-                pnlReto.DragOver += (s, ev) => { ev.Effect = DragDropEffects.Move; }; // Permitir drop
-                pnlReto.DragDrop += (s, ev) =>
-                {
-                    Panel dragged = (Panel)ev.Data.GetData(typeof(Panel));
-                    dragged.Location = pnlReto.PointToClient(new Point(ev.X, ev.Y)); // Mover a nueva posición
-                };
-                tarjetas.Add(pnlTarjeta);
-                pnlReto.Controls.Add(pnlTarjeta);
-                yPos += 35; // Espacio entre tarjetas
-            }
-
-            Button btnValidar = new Button { Text = "Validar Orden", Location = new Point(10, yPos + 10) };
-            btnValidar.Click += (s, ev) =>
-            {
-                // Validar basado en posiciones Y (orden vertical)
-                tarjetas = tarjetas.OrderBy(t => t.Location.Y).ToList();// Ordenar por y
-                bool correcto = true;
-                for (int i = 0; i < tarjetas.Count; i++)
-                {
-                    if (tarjetas[i].Controls[0].Text != accionesRecepcion[i]) correcto = false;
-                }
-                if (correcto)
-                {
-                    MessageBox.Show("¡Correcto! Orden validado.", "Feedback");
-                    completado[0] = true;
-                    ActualizarProgreso();
-                    pnlReto.Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Incorrecto. Revisa el orden: Verificar integridad primero, luego registrar, notificar y sanitizar.", "Feedback");
-                }
-            };
-            pnlReto.Controls.Add(btnValidar);
-        }
-        //juego almecenamiento
-        private void BtnAlmacenamiento_Click(object sender, EventArgs e)
-        {
-            if (completado[1]) return;
-            pnlReto.Controls.Clear();
-            pnlReto.Visible = true;
-            Label lblPregunta = new Label { Text = "¿Cuál acción garantiza la seguridad alimentaria a largo plazo?", Location = new Point(10, 10), AutoSize = true };
-            pnlReto.Controls.Add(lblPregunta);
-
-            RadioButton rb1 = new RadioButton { Text = "Rotar stock colocando lo nuevo detrás de lo antiguo.", Location = new Point(10, 40), AutoSize = true };
-            RadioButton rb2 = new RadioButton { Text = "Almacenar sin registrar.", Location = new Point(10, 70), AutoSize = true };
-            RadioButton rb3 = new RadioButton { Text = "Mezclar productos antiguos y nuevos.", Location = new Point(10, 100), AutoSize = true };
-            pnlReto.Controls.Add(rb1);
-            pnlReto.Controls.Add(rb2);
-            pnlReto.Controls.Add(rb3);
-
-            Button btnValidar = new Button { Text = "Validar", Location = new Point(10, 150) };
-            btnValidar.Click += (s, ev) =>
-            {
-                if (rb1.Checked)
-                {
-                    MessageBox.Show("¡Correcto! La rotación FIFO asegura frescura.", "Feedback");
-                    completado[1] = true;
-                    ActualizarProgreso();
-                    pnlReto.Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Incorrecto. La rotación es clave para evitar caducidad.", "Feedback");
-                }
-            };
-            pnlReto.Controls.Add(btnValidar);
+            int c = completado.Count(x => x);
+            pbProgreso.Value = c;
+            lblProgreso.Text = $"Progreso {c}/4";
         }
 
-        private void BtnEntrega_Click(object sender, EventArgs e)
+        private RoundedButton CrearBoton(string txt, Color clr, Point loc, int w, int h) =>
+            new RoundedButton() { Text = txt, Size = new Size(w, h), BackColor = clr, Location = loc, Font = new Font("Segoe UI", 8, FontStyle.Bold) };
+    }
+
+    public class RoundedPanel : Panel
+    {
+        protected override void OnPaint(PaintEventArgs e)
         {
-            if (completado[2]) return;
-            pnlReto.Controls.Clear();
-            pnlReto.Visible = true;
-            Label lblVF = new Label { Text = "\"Registrar la entrega no es necesario si el beneficiario es frecuente.\"", Location = new Point(10, 10), AutoSize = true };
-            pnlReto.Controls.Add(lblVF);
-
-            RadioButton rbVerdadero = new RadioButton { Text = "Verdadero", Location = new Point(10, 40) };
-            RadioButton rbFalso = new RadioButton { Text = "Falso", Location = new Point(10, 70) };
-            pnlReto.Controls.Add(rbVerdadero);
-            pnlReto.Controls.Add(rbFalso);
-
-            Button btnValidar = new Button { Text = "Validar", Location = new Point(10, 150) };
-            btnValidar.Click += (s, ev) =>
-            {
-                if (rbFalso.Checked)
-                {
-                    MessageBox.Show("¡Correcto! El registro es obligatorio para el cierre de cuenta diario.", "Feedback");
-                    completado[2] = true;
-                    ActualizarProgreso();
-                    pnlReto.Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Incorrecto. Siempre se debe registrar.", "Feedback");
-                }
-            };
-            pnlReto.Controls.Add(btnValidar);
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, 15, 15, 180, 90); gp.AddArc(Width - 16, 0, 15, 15, 270, 90);
+            gp.AddArc(Width - 16, Height - 16, 15, 15, 0, 90); gp.AddArc(0, Height - 16, 15, 15, 90, 90);
+            Region = new Region(gp);
         }
+    }
 
-        private void BtnNormas_Click(object sender, EventArgs e)
+    public class RoundedButton : Button
+    {
+        public RoundedButton() { FlatStyle = FlatStyle.Flat; FlatAppearance.BorderSize = 0; }
+        protected override void OnPaint(PaintEventArgs e)
         {
-            if (completado[3]) return;
-            pnlReto.Controls.Clear();
-            pnlReto.Visible = true;
-            Label lblRiesgo = new Label { Text = "¿Cuál donación debe rechazarse? (Selecciona la incorrecta)", Location = new Point(10, 10), AutoSize = true };
-            pnlReto.Controls.Add(lblRiesgo);
-
-            CheckBox cb1 = new CheckBox { Text = "Conservas selladas (seguras).", Location = new Point(10, 40) };
-            CheckBox cb2 = new CheckBox { Text = "Producto casero sin etiqueta (riesgo sanitario).", Location = new Point(10, 70) };
-            CheckBox cb3 = new CheckBox { Text = "Granos secos (seguros).", Location = new Point(10, 100) };
-            pnlReto.Controls.Add(cb1);
-            pnlReto.Controls.Add(cb2);
-            pnlReto.Controls.Add(cb3);
-
-            Button btnValidar = new Button { Text = "Validar", Location = new Point(10, 150) };
-            btnValidar.Click += (s, ev) =>
-            {
-                if (cb2.Checked && !cb1.Checked && !cb3.Checked)
-                {
-                    MessageBox.Show("¡Correcto! Productos caseros sin etiqueta violan normas sanitarias (OMS/FAO).", "Feedback");
-                    completado[3] = true;
-                    ActualizarProgreso();
-                    pnlReto.Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Incorrecto. Rechaza lo que no cumple higiene.", "Feedback");
-                }
-            };
-            pnlReto.Controls.Add(btnValidar);
-
+            base.OnPaint(e);
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, 12, 12, 180, 90); gp.AddArc(Width - 1, 0, 12, 12, 270, 90);
+            gp.AddArc(Width - 1, Height - 1, 12, 12, 0, 90); gp.AddArc(0, Height - 1, 12, 12, 90, 90);
+            Region = new Region(gp);
         }
     }
 }

@@ -17,60 +17,31 @@
 
         private void InitializeComponent()
         {
-            Button GuiaButon;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormN1));
-            Button DonacionButon;
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
-            GuiaButon = new Button();
-            DonacionButon = new Button();
+            panelContenedor = new Panel();
+            pictureBox4 = new PictureBox();
+            panel2 = new Panel();
+            pictureBox6 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox3 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
-            // 
-            // GuiaButon
-            // 
-            GuiaButon.BackColor = Color.Transparent;
-            GuiaButon.BackgroundImage = (Image)resources.GetObject("GuiaButon.BackgroundImage");
-            GuiaButon.BackgroundImageLayout = ImageLayout.Stretch;
-            GuiaButon.Dock = DockStyle.Fill;
-            GuiaButon.FlatAppearance.BorderSize = 0;
-            GuiaButon.FlatStyle = FlatStyle.Flat;
-            GuiaButon.Font = new Font("Segoe Print", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            GuiaButon.Location = new Point(552, 3);
-            GuiaButon.Name = "GuiaButon";
-            GuiaButon.Size = new Size(132, 58);
-            GuiaButon.TabIndex = 5;
-            GuiaButon.TextAlign = ContentAlignment.BottomCenter;
-            GuiaButon.UseVisualStyleBackColor = false;
-            GuiaButon.Click += GuiaButon_Click;
-            // 
-            // DonacionButon
-            // 
-            DonacionButon.BackColor = Color.Transparent;
-            DonacionButon.BackgroundImage = (Image)resources.GetObject("DonacionButon.BackgroundImage");
-            DonacionButon.BackgroundImageLayout = ImageLayout.Stretch;
-            DonacionButon.Dock = DockStyle.Fill;
-            DonacionButon.FlatAppearance.BorderSize = 0;
-            DonacionButon.FlatStyle = FlatStyle.Flat;
-            DonacionButon.Font = new Font("Segoe Print", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DonacionButon.Location = new Point(419, 3);
-            DonacionButon.Name = "DonacionButon";
-            DonacionButon.Size = new Size(127, 58);
-            DonacionButon.TabIndex = 6;
-            DonacionButon.TextAlign = ContentAlignment.BottomCenter;
-            DonacionButon.UseVisualStyleBackColor = false;
-            DonacionButon.Click += DonacionButon_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -80,18 +51,19 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.5F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 1);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 0);
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 1);
             tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(panelContenedor, 1, 1);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 86.5F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7213736F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 89.2786255F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1041, 519);
             tableLayoutPanel1.TabIndex = 2;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // panel1
             // 
@@ -100,21 +72,21 @@
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 73);
+            panel1.Location = new Point(3, 58);
             panel1.Name = "panel1";
-            panel1.Size = new Size(342, 443);
+            panel1.Size = new Size(342, 458);
             panel1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(289, 390);
+            pictureBox2.Location = new Point(280, 381);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(50, 50);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click_1;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // button3
             // 
@@ -124,7 +96,7 @@
             button3.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(8, 201);
+            button3.Location = new Point(26, 236);
             button3.Name = "button3";
             button3.Size = new Size(304, 40);
             button3.TabIndex = 2;
@@ -140,7 +112,7 @@
             button2.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(8, 26);
+            button2.Location = new Point(26, 35);
             button2.Name = "button2";
             button2.Size = new Size(304, 40);
             button2.TabIndex = 1;
@@ -156,7 +128,7 @@
             button1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(8, 111);
+            button1.Location = new Point(26, 135);
             button1.Name = "button1";
             button1.Size = new Size(304, 40);
             button1.TabIndex = 0;
@@ -164,45 +136,84 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62.7F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.3F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 133F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
-            tableLayoutPanel2.Controls.Add(GuiaButon, 3, 0);
-            tableLayoutPanel2.Controls.Add(DonacionButon, 2, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(351, 3);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(687, 64);
-            tableLayoutPanel2.TabIndex = 6;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(351, 73);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(18, 19, 18, 19);
-            flowLayoutPanel1.Size = new Size(687, 443);
-            flowLayoutPanel1.TabIndex = 2;
-            // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.atras;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.Size = new Size(50, 49);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // panelContenedor
+            // 
+            panelContenedor.AutoScroll = true;
+            panelContenedor.Controls.Add(pictureBox4);
+            panelContenedor.Location = new Point(351, 57);
+            panelContenedor.Margin = new Padding(3, 2, 3, 2);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(687, 460);
+            panelContenedor.TabIndex = 8;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(581, -54);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(50, 49);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 4;
+            pictureBox4.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(pictureBox6);
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(351, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(687, 49);
+            panel2.TabIndex = 9;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Dock = DockStyle.Right;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(540, 0);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(49, 49);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 2;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Dock = DockStyle.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(589, 0);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(49, 49);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 1;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Dock = DockStyle.Right;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(638, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(49, 49);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 0;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // FormN1
             // 
@@ -221,8 +232,13 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelContenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
 
         }
@@ -230,15 +246,17 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button GuiaButon;
-        private System.Windows.Forms.Button DonacionButon;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox1;
         private Panel panel1;
         private PictureBox pictureBox2;
         private Button button3;
         private Button button2;
         private Button button1;
+        private Panel panelContenedor;
+        private PictureBox pictureBox4;
+        private Panel panel2;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox3;
     }
 }

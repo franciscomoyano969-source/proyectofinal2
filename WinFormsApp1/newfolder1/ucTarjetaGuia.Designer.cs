@@ -52,6 +52,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            BackColor = Color.Transparent;
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(btnSiguiente);
             Name = "ucTarjetaGuia";
