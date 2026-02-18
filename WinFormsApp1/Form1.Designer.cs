@@ -90,6 +90,7 @@
             // picinfo
             // 
             picinfo.BackColor = Color.Transparent;
+            picinfo.Cursor = Cursors.Hand;
             picinfo.Image = (Image)resources.GetObject("picinfo.Image");
             picinfo.Location = new Point(853, 373);
             picinfo.Name = "picinfo";
@@ -102,6 +103,7 @@
             // piclogin
             // 
             piclogin.BackColor = Color.Transparent;
+            piclogin.Cursor = Cursors.Hand;
             piclogin.Image = (Image)resources.GetObject("piclogin.Image");
             piclogin.Location = new Point(458, 327);
             piclogin.Name = "piclogin";

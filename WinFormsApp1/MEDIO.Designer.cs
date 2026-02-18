@@ -108,6 +108,7 @@
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.Salmon;
+            btnLimpiar.Cursor = Cursors.Hand;
             btnLimpiar.FlatAppearance.BorderSize = 0;
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -122,6 +123,7 @@
             // btnVerificar
             // 
             btnVerificar.BackColor = Color.GreenYellow;
+            btnVerificar.Cursor = Cursors.Hand;
             btnVerificar.FlatAppearance.BorderSize = 0;
             btnVerificar.FlatStyle = FlatStyle.Flat;
             btnVerificar.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -762,6 +764,7 @@
             // 
             picsalir.BackColor = Color.Transparent;
             picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Cursor = Cursors.Hand;
             picsalir.Image = (Image)resources.GetObject("picsalir.Image");
             picsalir.Location = new Point(793, 12);
             picsalir.Name = "picsalir";

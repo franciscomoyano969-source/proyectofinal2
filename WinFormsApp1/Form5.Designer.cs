@@ -469,9 +469,9 @@
             panel3.Controls.Add(pictureBox6);
             panel3.Controls.Add(label15);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new Point(2, 0);
+            panel3.Location = new Point(2, -1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(800, 450);
+            panel3.Size = new Size(800, 451);
             panel3.TabIndex = 15;
             // 
             // pictureBox10
@@ -479,6 +479,7 @@
             pictureBox10.BackColor = Color.Transparent;
             pictureBox10.BackgroundImage = (Image)resources.GetObject("pictureBox10.BackgroundImage");
             pictureBox10.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox10.Cursor = Cursors.Hand;
             pictureBox10.Location = new Point(751, 12);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(40, 40);
@@ -582,6 +583,7 @@
             pictureBox9.BackColor = Color.Transparent;
             pictureBox9.BackgroundImage = (Image)resources.GetObject("pictureBox9.BackgroundImage");
             pictureBox9.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox9.Cursor = Cursors.Hand;
             pictureBox9.Location = new Point(745, 12);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(40, 40);

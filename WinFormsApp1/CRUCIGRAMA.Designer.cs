@@ -301,6 +301,7 @@
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Cursor = Cursors.Hand;
             pictureBox4.Location = new Point(12, 9);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(50, 50);
@@ -312,6 +313,7 @@
             // 
             picsalir.BackColor = Color.Transparent;
             picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Cursor = Cursors.Hand;
             picsalir.Image = (Image)resources.GetObject("picsalir.Image");
             picsalir.Location = new Point(748, 9);
             picsalir.Name = "picsalir";

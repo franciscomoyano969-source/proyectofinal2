@@ -120,6 +120,7 @@
             button1.BackColor = Color.Transparent;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(126, 162);
@@ -135,6 +136,7 @@
             button3.BackColor = Color.Transparent;
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.Cursor = Cursors.Hand;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Location = new Point(511, 162);
@@ -196,7 +198,7 @@
             referenciaa.Controls.Add(label7);
             referenciaa.Controls.Add(label5);
             referenciaa.Controls.Add(label2);
-            referenciaa.Location = new Point(67, 142);
+            referenciaa.Location = new Point(65, 145);
             referenciaa.Name = "referenciaa";
             referenciaa.Size = new Size(398, 266);
             referenciaa.TabIndex = 25;
@@ -289,6 +291,7 @@
             // 
             picsalir.BackColor = Color.Transparent;
             picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Cursor = Cursors.Hand;
             picsalir.Image = (Image)resources.GetObject("picsalir.Image");
             picsalir.Location = new Point(748, 12);
             picsalir.Name = "picsalir";

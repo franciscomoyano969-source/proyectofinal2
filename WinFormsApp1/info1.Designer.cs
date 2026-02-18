@@ -72,6 +72,7 @@
             // picregresar
             // 
             picregresar.BackColor = Color.Transparent;
+            picregresar.Cursor = Cursors.Hand;
             picregresar.Image = Properties.Resources.atras;
             picregresar.Location = new Point(12, 12);
             picregresar.Name = "picregresar";
@@ -86,6 +87,7 @@
             picjuego.BackColor = Color.Transparent;
             picjuego.BackgroundImage = (Image)resources.GetObject("picjuego.BackgroundImage");
             picjuego.BackgroundImageLayout = ImageLayout.Stretch;
+            picjuego.Cursor = Cursors.Hand;
             picjuego.Location = new Point(107, 359);
             picjuego.Name = "picjuego";
             picjuego.Size = new Size(50, 50);
@@ -96,6 +98,7 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
+            button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -112,6 +115,7 @@
             // button2
             // 
             button2.BackColor = Color.Transparent;
+            button2.Cursor = Cursors.Hand;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -128,6 +132,7 @@
             // button3
             // 
             button3.BackColor = Color.Transparent;
+            button3.Cursor = Cursors.Hand;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -144,6 +149,7 @@
             // button4
             // 
             button4.BackColor = Color.Transparent;
+            button4.Cursor = Cursors.Hand;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -160,6 +166,7 @@
             // button5
             // 
             button5.BackColor = Color.Transparent;
+            button5.Cursor = Cursors.Hand;
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -176,6 +183,7 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(23, 359);
             pictureBox3.Name = "pictureBox3";
@@ -221,6 +229,7 @@
             // picsalref
             // 
             picsalref.BackColor = Color.Transparent;
+            picsalref.Cursor = Cursors.Hand;
             picsalref.Image = (Image)resources.GetObject("picsalref.Image");
             picsalref.Location = new Point(297, 7);
             picsalref.Name = "picsalref";
@@ -336,6 +345,7 @@
             // 
             picsalir.BackColor = Color.Transparent;
             picsalir.BackgroundImageLayout = ImageLayout.Stretch;
+            picsalir.Cursor = Cursors.Hand;
             picsalir.Image = (Image)resources.GetObject("picsalir.Image");
             picsalir.Location = new Point(749, 12);
             picsalir.Name = "picsalir";

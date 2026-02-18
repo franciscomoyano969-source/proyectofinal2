@@ -168,6 +168,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(83, 209);
             pictureBox2.Name = "pictureBox2";
@@ -180,6 +181,7 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(321, 225);
             pictureBox3.Name = "pictureBox3";
@@ -192,6 +194,7 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Cursor = Cursors.Hand;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(557, 209);
             pictureBox4.Name = "pictureBox4";
@@ -267,6 +270,7 @@
             // pictureBox6
             // 
             pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.Cursor = Cursors.Hand;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
             pictureBox6.Location = new Point(748, 12);
             pictureBox6.Name = "pictureBox6";
